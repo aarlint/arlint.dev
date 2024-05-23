@@ -32,6 +32,10 @@
             font-size: 2.5em;
             margin-bottom: 0.5em;
         }
+        h2 {
+            font-size: 2em;
+            margin-top: 0;
+        }
         .specialities {
             list-style: none;
             padding: 0;
@@ -44,6 +48,24 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             font-size: 1.2em;
             border: 1px solid #ddd;
+        }
+        .resume-links {
+            margin-top: 2em;
+            text-align: center;
+        }
+        .resume-links a {
+            display: inline-block;
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            color: white;
+            background-color: #8d8a7b;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #575548;
+        }
+        .resume-links a:hover {
+            background-color: #575548;
         }
         footer {
             background-color: #8d8a7b;
@@ -63,7 +85,7 @@
         <p>Your partner in modern IT solutions</p>
     </header>
     <div class="container">
-        <h2>Specialities</h2>
+        <h2>Technical Skills</h2>
         <ul class="specialities">
             <li>Kubernetes</li>
             <li>IAC (Infrastructure as Code)</li>
@@ -74,9 +96,9 @@
             <li>Azure</li>
             <li>GCP</li>
         </ul>
-        <div>
-            <!-- link to austin-arlint-resume.html -->
+        <div class="resume-links">
             <a href="austin-arlint-resume.html">View Resume</a>
+            <a href="austin-arlint-resume.pdf" download>Download PDF</a>
         </div>
     </div>
     <footer>
