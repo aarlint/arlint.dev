@@ -1,5 +1,5 @@
 **Austin Arlint**  
-[austin@arlint.dev](mailto:austin@arlint.dev) | (406) 218-6028 | [GitHub: github.com/aarlint](https://github.com/aarlint)
+[austin@arlint.dev](mailto:austin@arlint.dev) | (406) 218-6028 | [GitHub: github.com/aarlint](https://github.com/aarlint) | [arlint.dev](https://arlint.dev)
 
 ---
 
@@ -8,7 +8,7 @@
 
 **Specialties**:
 - Kubernetes
-- Cloud (AWS, Azure, )
+- Cloud (AWS, Azure, GCP)
 - Automation
 
 **Skills**:
@@ -41,9 +41,9 @@
 
 **NTT - Senior Application Developer and Operator**  
 *2019 - 2023*  
-- Deployed and managed hundreds of Kubernetes clusters (EKS, AKS, Standalone).
+- Deployed and managed hundreds of Kubernetes clusters (EKS, AKS, Standalone) using Rancher Server.
 - Developed multiple containerized applications using Go, Python, Node.js, Django, and Vue.js.
-- Created Continuous Integration and Deployment pipelines using GitHub Actions for Core Systems DevOps.
+- Created CI/CD pipelines using GitHub Actions for Core Systems DevOps.
 - Developed an Automation Platform Application in Django using containers, AWX, Rancher, and HashiCorp tools.
 
 **NTT - Senior Application Developer and Operator**  
