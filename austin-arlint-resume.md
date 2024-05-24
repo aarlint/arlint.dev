@@ -17,11 +17,12 @@
 - Proficient with Rancher
 - Expert in deploying and managing hundreds of Kubernetes clusters
 - Skilled in automation scripting and container management
+- Skilled in IAC - Terraform and Ansible
 
 **Technical Skills**:
 - **Kubernetes**: 5+ years in production
 - **Rancher**: 2+ years
-- **Terraform**: 2 years
+- **Terraform**: 2+ years
 - **Helm Package**: Usage and development, 3 years
 - **Python**: 5+ years
 - **Ansible**: 5+ years
@@ -35,14 +36,19 @@
 - Team: CNAP on Platform One (Software Factory, Air Force)
 - Responsible for BigBang deployments and upgrades.
 - Migrated KeyCloak Identity Management with zero downtime from CNAP to P1 Common Services.
-- Managed IAC of P1 Common Services via Terraform for AWS infrastructure and Flux for production and staging Kubernetes environments.
-- Developed and maintained pipelines for feature changes and deployments.
+- Managed IAC of P1 Common Services with Terraform for AWS govcloud 
+- Developed Flux configuration for production and staging EKS environments.
+- Developed and maintained Terraform pipelines for feature changes and deployments, used by 5+ engineers.
 - Deployed and managed Hashicorp Vault with PKI.
+- Converted Atlantis and Terragrunt IAC to vanilla Terraform with GitLab Pipelines for AWS infra.
+- Developed custom EKS Terraform module for AWS GovCloud.
 
 **NTT - Senior Application Developer and Operator**  
 *2019 - 2023*  
 - Deployed and managed hundreds of Kubernetes clusters (EKS, AKS, Standalone) using Rancher Server.
-- Developed multiple containerized applications using Go, Python, Node.js, Django, and Vue.js.
+- Deployed AWX (ansible tower) on K8s and managed and developed 100s of playbooks for 3 engineering teams.
+- Using Ansible-Runner containers and Knative I developed a remote ansible runner which terminated upon completion eliminating resource usage outside of runtime.
+- Developed containerized applications using Go, Python, Node.js, Django, and Vue.js.
 - Created CI/CD pipelines using GitHub Actions for Core Systems DevOps.
 - Developed an Automation Platform Application in Django using containers, AWX, Rancher, and HashiCorp tools.
 
