@@ -7,9 +7,9 @@
 **Years of Experience**: 10+ years  
 
 **Specialties**:
-- Kubernetes
+- Kubernetes (EKS, AKS, Bare Metal)
 - Cloud (AWS, Azure, GCP)
-- Automation
+- IAC (Gitlab & Github)
 
 **Skills**:
 - **Technical Languages**: Python, GoLang, Ansible
