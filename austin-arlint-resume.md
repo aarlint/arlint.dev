@@ -9,7 +9,7 @@
 **Specialties**:
 - Kubernetes (EKS, AKS, Bare Metal)
 - Cloud (AWS, Azure, GCP)
-- IAC (Gitlab & Github)
+- IAC (TF, Ansible, Git)
 
 **Skills**:
 - **Technical Languages**: Python, GoLang, Ansible
