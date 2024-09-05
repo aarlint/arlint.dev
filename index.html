@@ -186,6 +186,12 @@
             opacity: 0;
             transform: translateY(-30px);
         }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -210,6 +216,7 @@
         <div v-if="skills.length">
             <transition-group name="skillsGroup" tag="div">
                 <div class="skills-summary" v-for="(skill, index) in skills" :key="index" v-show="skill.show">
+                    <img :src="skill.icon" :alt="skill.name" class="skill-icon">
                     <h3>{{ skill.name }}</h3>
                     <p>{{ skill.description }}</p>
                     <p>{{ skill.story }}</p>
