@@ -192,6 +192,15 @@
             height: 50px;
             margin-top: 10px;
         }
+
+        h2 {
+            color: #7448ce;
+        }
+
+        .instructions {
+            color: #b3b3ff;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -204,6 +213,9 @@
             <p>Senior DevSecOps Engineer | Full Stack Developer | Holds Secret Clearance</p>
         </div>
 
+        <h2><i class="material-icons icon">code</i> Skills</h2>
+        <!-- instruct viewer to select a skill -->
+        <p class="instructions">Click on the icons below to view details of each skill.</p>
         <div class="icon-section">
 
             <div class="icon-container" v-for="(skill, index) in skills" :key="index" @click="showDetails(skill)"
@@ -266,7 +278,11 @@
     <script>
         new Vue({
             el: '#app',
+
             data: {
+                "name": "Austin Arlint",
+                "title": "Senior DevSecOps Engineer | Full Stack Developer | Holds Secret Clearance",
+
                 "skills": [
                     {
                         "name": "AI and Machine Learning",
