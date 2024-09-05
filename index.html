@@ -54,16 +54,6 @@
             padding-bottom: 10px;
         }
 
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
         .highlight {
             background-color: #7448ce;
             color: #fff;
@@ -71,10 +61,54 @@
             border-radius: 4px;
         }
 
-        .icon {
-            vertical-align: middle;
-            margin-right: 10px;
-            color: #7448ce;
+        .icon-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .icon-container {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10%;
+            background-color: #111229;
+            text-align: center;
+            cursor: pointer;
+            transition: filter 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
+
+        }
+
+        .icon-container:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #111229;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .icon-container:hover .tooltip {
+            display: block;
         }
 
         .contact-info {
@@ -109,22 +143,6 @@
             background-color: #7448ce;
             color: #0f0f1c;
         }
-
-        .section ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        .section ul ul {
-            list-style: circle;
-            padding-left: 20px;
-        }
-
-        .section ul li {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
     </style>
 </head>
 
@@ -135,7 +153,49 @@
             <h1>Austin Arlint</h1>
             <p>DevSecOps Engineer | Cloud Kubernetes Specialist</p>
         </div>
-
+        <!-- Skills Section with Icons -->
+        <div class="section">
+            <h2><i class="material-icons icon">build</i> Technical Skills</h2>
+            <div class="icon-section">
+                <div class="icon-container">
+                    <img src="logos/kubernets.svg" alt="Kubernetes">
+                    <div class="tooltip">Kubernetes - Container Orchestration</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/docker-4.svg" alt="Docker">
+                    <div class="tooltip">Docker - Containerization</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/terraform-enterprise.svg" alt="Terraform">
+                    <div class="tooltip">Terraform - Infrastructure as Code</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/aws-logo.svg" alt="AWS">
+                    <div class="tooltip">AWS - Cloud Platform</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/nodejs-icon.svg" alt="NodeJS">
+                    <div class="tooltip">NodeJS - JavaScript Runtime</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/github-icon-2.svg" alt="GitHub">
+                    <div class="tooltip">GitHub - Version Control</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/python-5.svg" alt="Python">
+                    <div class="tooltip">Python - Programming Language</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/ansible.svg" alt="Ansible">
+                    <div class="tooltip">Ansible - Automation</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/django.svg" alt="Django">
+                    <div class="tooltip">Django - Web Framework</div>
+                </div>
+                <!-- Add more icons as needed -->
+            </div>
+        </div>
         <!-- Professional Experience -->
         <div class="section">
             <h2><i class="material-icons icon">work</i> Professional Experience</h2>
