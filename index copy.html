@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Arlint Resume</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -81,6 +80,7 @@
             cursor: pointer;
             transition: filter 0.3s ease, transform 0.3s ease;
             box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
+
         }
 
         .icon-container:hover {
@@ -92,12 +92,23 @@
             height: 100%;
         }
 
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #111229;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
 
-
-
-        .selected {
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-            transform: scale(1.2);
+        .icon-container:hover .tooltip {
+            display: block;
         }
 
         .contact-info {
@@ -132,46 +143,58 @@
             background-color: #7448ce;
             color: #0f0f1c;
         }
-
-        /* Dynamic content section */
-        .skills-summary {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #111229;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
-        }
-
-        .skills-summary.active {
-            display: block;
-        }
     </style>
 </head>
 
 <body>
-    <div id="app" class="container">
+    <div class="container">
         <!-- Header Section -->
         <div class="header">
             <h1>Austin Arlint</h1>
             <p>DevSecOps Engineer | Cloud Kubernetes Specialist</p>
         </div>
-
         <!-- Skills Section with Icons -->
         <div class="section">
             <h2><i class="material-icons icon">build</i> Technical Skills</h2>
             <div class="icon-section">
-                <div class="icon-container" v-for="(skill, index) in skills" :key="index" @click="showDetails(skill)"
-                    :class="{ selected: selectedSkill === skill }">
-                    <img :src="skill.icon" :alt="skill.name">
+                <div class="icon-container">
+                    <img src="logos/kubernets.svg" alt="Kubernetes">
+                    <div class="tooltip">Kubernetes - Container Orchestration</div>
                 </div>
+                <div class="icon-container">
+                    <img src="logos/docker-4.svg" alt="Docker">
+                    <div class="tooltip">Docker - Containerization</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/terraform-enterprise.svg" alt="Terraform">
+                    <div class="tooltip">Terraform - Infrastructure as Code</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/aws-logo.svg" alt="AWS">
+                    <div class="tooltip">AWS - Cloud Platform</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/nodejs-icon.svg" alt="NodeJS">
+                    <div class="tooltip">NodeJS - JavaScript Runtime</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/github-icon-2.svg" alt="GitHub">
+                    <div class="tooltip">GitHub - Version Control</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/python-5.svg" alt="Python">
+                    <div class="tooltip">Python - Programming Language</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/ansible.svg" alt="Ansible">
+                    <div class="tooltip">Ansible - Automation</div>
+                </div>
+                <div class="icon-container">
+                    <img src="logos/django.svg" alt="Django">
+                    <div class="tooltip">Django - Web Framework</div>
+                </div>
+                <!-- Add more icons as needed -->
             </div>
-        </div>
-
-        <!-- Dynamic Content Display -->
-        <div class="skills-summary" v-if="selectedSkill">
-            <h3>{{ selectedSkill.name }}</h3>
-            <p>{{ selectedSkill.description }}</p>
-            <p>{{ selectedSkill.story }}</p>
         </div>
         <!-- Professional Experience -->
         <div class="section">
@@ -225,6 +248,28 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2><i class="material-icons icon">build</i> Technical Skills</h2>
+            <ul>
+                <li><i class="material-icons icon">code</i> Proficient in <span class="highlight">Kubernetes</span>,
+                    <span class="highlight">Docker</span>, and <span class="highlight">Rancher</span> for managing
+                    containerized applications.
+                </li>
+                <li><i class="material-icons icon">settings</i> Skilled in automation and scripting for <span
+                        class="highlight">container management</span>.</li>
+                <li><i class="material-icons icon">computer</i> Expertise in managing <span
+                        class="highlight">CI/CD</span>, <span class="highlight">GitOps</span>, and <span
+                        class="highlight">GitHub Actions</span>.</li>
+                <li><i class="material-icons icon">language</i> Programming languages: <span
+                        class="highlight">Python</span>, <span class="highlight">GoLang</span>, <span
+                        class="highlight">Ansible</span>, <span class="highlight">NodeJS</span>.</li>
+                <li><i class="material-icons icon">cloud</i> Cloud Platforms: <span class="highlight">AWS</span>, <span
+                        class="highlight">Azure</span>, <span class="highlight">GCP</span>.</li>
+            </ul>
+        </div>
+
         <!-- Specialties -->
         <div class="section">
             <h2><i class="material-icons icon">star</i> Specialties</h2>
@@ -258,76 +303,6 @@
             <a href="austin-arlint-resume.pdf" class="button">Download Resume</a>
         </div>
     </div>
-
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                "skills": [
-                    {
-                        "name": "Kubernetes - Container Orchestration",
-                        "description": "Experience in managing containerized applications and orchestration using Kubernetes.",
-                        "icon": "logos/kubernets.svg",
-                        "story": "At RAFT, I managed multiple Kubernetes clusters across various environments, including AWS, EKS, and standalone Rancher setups. I was responsible for ensuring the stability and scalability of microservices, automating the orchestration of containers, and resolving issues as they arose. One significant challenge was migrating applications to Kubernetes, where I automated deployment pipelines, reduced downtime, and optimized resource utilization, ensuring production systems were always highly available."
-                    },
-                    {
-                        "name": "Docker - Containerization",
-                        "description": "Expert in containerizing applications and services using Docker.",
-                        "icon": "logos/docker-4.svg",
-                        "story": "At NTT, I used Docker to containerize complex multi-tier applications, ensuring consistent environments from development to production. This involved creating Dockerfiles, optimizing images, and managing Docker Compose for local development. Docker became an integral part of our CI/CD pipeline, where I automated testing, building, and deployment of containers to Kubernetes, significantly improving the speed and reliability of our software delivery process."
-                    },
-                    {
-                        "name": "Terraform - Infrastructure as Code",
-                        "description": "Infrastructure management and automation using Terraform.",
-                        "icon": "logos/terraform-enterprise.svg",
-                        "story": "I utilized Terraform extensively for managing cloud infrastructure at RAFT and NTT. By automating the provisioning of AWS resources such as VPCs, EC2 instances, and security groups, I streamlined our infrastructure as code (IaC) practices. One of the key projects involved creating reusable Terraform modules that allowed teams to rapidly deploy consistent environments across development, staging, and production. This automation not only saved time but also reduced the risk of human error in infrastructure configurations."
-                    },
-                    {
-                        "name": "AWS - Cloud Platform",
-                        "description": "Proficient in AWS cloud platform for deploying and managing services.",
-                        "icon": "logos/aws-logo.svg",
-                        "story": "Over the years, I’ve worked extensively with AWS, deploying and managing applications and services in cloud environments. At RAFT, I architected and managed infrastructure on AWS using services like EC2, RDS, S3, and Route 53. I implemented autoscaling groups to handle fluctuating traffic and ensured high availability across regions. My work also involved optimizing cost by implementing reserved instances and leveraging spot instances for non-critical workloads."
-                    },
-                    {
-                        "name": "NodeJS - JavaScript Runtime",
-                        "description": "NodeJS for backend services and full-stack development.",
-                        "icon": "logos/nodejs-icon.svg",
-                        "story": "At NTT, I used NodeJS to develop backend services for internal tools and customer-facing applications. My experience spans building RESTful APIs, integrating with third-party services, and handling asynchronous tasks using NodeJS. I also utilized NodeJS for full-stack development, integrating it with frontend frameworks and database services to deliver end-to-end solutions. This allowed me to create scalable, high-performance applications that powered both web and mobile interfaces."
-                    },
-                    {
-                        "name": "GitHub - Version Control",
-                        "description": "Version control, collaboration, and CI/CD pipeline management using GitHub.",
-                        "icon": "logos/github-icon-2.svg",
-                        "story": "Throughout my career, GitHub has been my go-to platform for version control and collaboration. I have managed extensive repositories, ensuring clean commit histories and efficient branching strategies. At NTT, I leveraged GitHub Actions to automate our CI/CD pipelines, where every commit triggered builds, tests, and deployments to our Kubernetes clusters. This setup minimized manual intervention, reduced deployment errors, and enabled faster feature rollouts."
-                    },
-                    {
-                        "name": "Python - Programming Language",
-                        "description": "Python for automation, scripting, and backend development.",
-                        "icon": "logos/python-5.svg",
-                        "story": "Python has been a crucial tool in my toolkit for automating infrastructure tasks, scripting, and backend development. At NTT, I used Python extensively with Ansible to automate infrastructure management tasks, such as setting up servers, configuring applications, and managing system updates. I’ve also written custom Python scripts to streamline deployment processes and handle data processing tasks, significantly improving operational efficiency."
-                    },
-                    {
-                        "name": "Ansible - Automation",
-                        "description": "Automation of infrastructure and services using Ansible.",
-                        "icon": "logos/ansible.svg",
-                        "story": "At NTT, I implemented automation strategies using Ansible to manage and maintain large-scale environments. This included automating server provisioning, configuration management, and software deployments. I developed playbooks that integrated with Jenkins to automate deployment pipelines, reducing time spent on repetitive tasks. Ansible allowed me to maintain a consistent and secure infrastructure, from development environments to production."
-                    },
-                    {
-                        "name": "Django - Web Framework",
-                        "description": "Full-stack web development using Django and Python.",
-                        "icon": "logos/django.svg",
-                        "story": "At NTT, I built full-stack applications using Django, leveraging its robustness for backend logic while keeping the frontend responsive and modern. Django’s ORM made database management seamless, and I implemented secure, scalable applications that supported thousands of users. One project involved building an internal dashboard for infrastructure monitoring, where Django’s built-in admin interface sped up the development and deployment of new features."
-                    }
-                ],
-                selectedSkill: null
-            },
-            methods: {
-                showDetails(skill) {
-                    this.selectedSkill = skill;
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>
