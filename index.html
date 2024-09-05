@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"
-        type="text/css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            font-size: medium;
+
             background: url('background.webp') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
+            color: #d4c9c9;
             margin: 0;
             padding: 0;
         }
@@ -35,6 +35,7 @@
             width: 100px;
             height: 100px;
             margin-right: 20px;
+            box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
         }
 
         .header {
@@ -153,17 +154,37 @@
             color: #0f0f1c;
         }
 
-        /* Dynamic content section */
+
+
+        .skills-summary.active {
+            display: block;
+        }
+
         .skills-summary {
             margin-top: 20px;
             padding: 20px;
             background-color: #111229;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.5s ease;
         }
 
-        .skills-summary.active {
-            display: block;
+        .skillsGroup-enter-active,
+        .skillsGroup-leave-active {
+            transition: all 0.5s ease-in-out;
+        }
+
+        .skillsGroup-enter-from,
+        .skillsGroup-leave-to {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        .skillsGroup-leave-active {
+            opacity: 0;
+            transform: translateY(-30px);
         }
     </style>
 </head>
@@ -187,17 +208,13 @@
 
         <!-- Dynamic Content Display for Multiple Selected Skills -->
         <div v-if="skills.length">
-            <div v-for="skill in skills" :key="skill.name" v-if="skill.show">
-
-                <div
-                    :class="'skills-summary animate__animated' + (skill.show ? ' animate__fadeIn' : ' animate__fadeOut')">
+            <transition-group name="skillsGroup" tag="div">
+                <div class="skills-summary" v-for="(skill, index) in skills" :key="index" v-show="skill.show">
                     <h3>{{ skill.name }}</h3>
                     <p>{{ skill.description }}</p>
                     <p>{{ skill.story }}</p>
-
                 </div>
-            </div>
-
+            </transition-group>
         </div>
 
 
