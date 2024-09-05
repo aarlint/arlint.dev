@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Arlint Resume</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -84,15 +86,17 @@
             margin: 10px;
             padding: 10px;
             border-radius: 10%;
-            background-color: #111229;
+
             text-align: center;
             cursor: pointer;
             transition: filter 0.3s ease, transform 0.3s ease;
             box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
         }
 
+
         .icon-container:hover {
             transform: scale(1.1);
+
         }
 
         .icon-container img {
@@ -162,7 +166,7 @@
         <div class="header">
             <img src="lusterjack.jpg" alt="Austin Arlint's Profile Picture">
             <h1>Austin Arlint</h1>
-            <p>DevSecOps Engineer | Cloud Kubernetes Specialist</p>
+            <p>Senior DevSecOps Engineer | Full Stack Developer | Holds Secret Clearance</p>
         </div>
 
         <!-- Skills Section with Icons -->
@@ -177,11 +181,14 @@
         </div>
 
         <!-- Dynamic Content Display -->
-        <div class="skills-summary" v-if="selectedSkill">
-            <h3>{{ selectedSkill.name }}</h3>
-            <p>{{ selectedSkill.description }}</p>
-            <p>{{ selectedSkill.story }}</p>
-        </div>
+        <transition name="custom-classes-transition" enter-active-class="animated rotateInDownLeft"
+            leave-active-class="animated hinge">
+            <div class="skills-summary" v-if="selectedSkill">
+                <h3>{{ selectedSkill.name }}</h3>
+                <p>{{ selectedSkill.description }}</p>
+                <p>{{ selectedSkill.story }}</p>
+            </div>
+        </transition>
         <!-- Professional Experience -->
         <div class="section">
             <h2><i class="material-icons icon">work</i> Professional Experience</h2>
@@ -242,6 +249,8 @@
                 </li>
                 <li>Senior <span class="highlight">DevSecOps Engineer</span> with a deep understanding of <span
                         class="highlight">Kubernetes</span> and cloud environments.</li>
+                <li> Holds a <span class="highlight">Secret Clearance</span> and is eligible for <span
+                        class="highlight">Top Secret</span> clearance.</li>
             </ul>
         </div>
 
@@ -332,7 +341,11 @@
             },
             methods: {
                 showDetails(skill) {
-                    this.selectedSkill = skill;
+                    if (this.selectedSkill === skill) {
+                        this.selectedSkill = null;
+                    } else {
+                        this.selectedSkill = skill;
+                    }
                 }
             }
         });
