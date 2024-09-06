@@ -168,23 +168,42 @@
             box-shadow: 0 0 15px rgba(116, 72, 206, 0.8);
             opacity: 1;
             transform: translateX(0);
+            /* Element starts in the normal position */
             transition: all 0.5s ease;
         }
 
-        .skillsGroup-enter-active,
-        .skillsGroup-leave-active {
-            transition: all 0.5s ease-in-out;
+        .skillsGroup-enter-active {
+            transition: all 0.5s ease;
+            /* Transition duration for the enter animation */
         }
 
-        .skillsGroup-enter-from,
+        .skillsGroup-enter-from {
+            opacity: 0;
+            transform: translateX(100vw);
+            /* Start completely off-screen to the right */
+        }
+
+        .skillsGroup-enter-to {
+            opacity: 1;
+            transform: translateX(0);
+            /* End at the normal position */
+        }
+
+        .skillsGroup-leave-active {
+            transition: all 0.5s ease;
+            /* Transition duration for the leave animation */
+        }
+
+        .skillsGroup-leave-from {
+            opacity: 1;
+            transform: translateX(0);
+            /* Start at the normal position */
+        }
+
         .skillsGroup-leave-to {
             opacity: 0;
-            transform: translateY(-30px);
-        }
-
-        .skillsGroup-leave-active {
-            opacity: 0;
-            transform: translateY(-30px);
+            transform: translateX(-100vw);
+            /* Exit completely off-screen to the left */
         }
 
         .skill-icon {
@@ -225,16 +244,16 @@
         </div>
 
         <!-- Dynamic Content Display for Multiple Selected Skills -->
-        <div v-if="skills.length">
-            <transition-group name="skillsGroup" tag="div">
-                <div class="skills-summary" v-for="(skill, index) in skills" :key="index" v-show="skill.show">
-                    <img :src="skill.icon" :alt="skill.name" class="skill-icon">
-                    <h3>{{ skill.name }}</h3>
-                    <p>{{ skill.description }}</p>
-                    <p>{{ skill.story }}</p>
-                </div>
-            </transition-group>
-        </div>
+
+        <transition-group name="skillsGroup" tag="div">
+            <div v-if="skill.show" class="skills-summary" v-for="(skill, index) in skills" :key="index">
+                <img :src="skill.icon" :alt="skill.name" class="skill-icon">
+                <h3>{{ skill.name }}</h3>
+                <p>{{ skill.description }}</p>
+                <p>{{ skill.story }}</p>
+            </div>
+        </transition-group>
+
 
 
 
@@ -280,6 +299,7 @@
             el: '#app',
 
             data: {
+                "cycleIcons": true,
                 "name": "Austin Arlint",
                 "title": "Senior DevSecOps Engineer | Full Stack Developer | Holds Secret Clearance",
 
@@ -289,7 +309,7 @@
                         "description": "Experience in integrating AI and ML models into cloud-based applications.",
                         "icon": "logos/ai.svg",
                         "story": "I have worked on several projects that involved integrating AI and machine learning models into cloud-based applications. I developed AI-powered chatbots that used natural language processing to interact with users and provide real-time assistance. I also worked on image generation platforms that utilized deep learning models to create custom images based on user input. These projects required a deep understanding of AI/ML concepts, cloud services, and serverless architectures.",
-                        "show": false
+                        "show": true
                     },
                     {
                         "name": "Kubernetes - Container Orchestration",
@@ -359,11 +379,35 @@
             },
             methods: {
                 showDetails(skill) {
+                    // stop cycling icons
+                    this.cycleIcons = false;
                     skill.show = !skill.show;
 
 
 
+                },
+                cycleSkills(skill) {
+                    // find index of current skill
+                    let currentIndex = this.skills.indexOf(skill);
+                    // find index of next skill
+                    let nextIndex = currentIndex + 1;
+                    // if next index is out of bounds, set to 0
+                    if (nextIndex >= this.skills.length) {
+                        nextIndex = 0;
+                    }
+                    // hide current skill
+                    skill.show = false;
+                    // show next skill
+                    this.skills[nextIndex].show = true;
                 }
+            },
+            mounted() {
+                setInterval(() => {
+                    console.log('Cycling Skills');
+                    if (this.cycleIcons) {
+                        this.cycleSkills(this.skills.find(skill => skill.show));
+                    }
+                }, 5000);
             }
         });
     </script>
