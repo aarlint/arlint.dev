@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-echo "🏗️ Building Big Red Barn React app..."
+echo "🏗️ Building Austin Arlint React app..."
 
 # Navigate to React app directory
 cd arlint-resume
