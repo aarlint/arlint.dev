@@ -6,6 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
+    title: "Trivy Glass, Vulnerability Scanner Visualizer",
+    description: "Developed a web application to visualize vulnerabilities in container images on K8s using Trivy Operator.",
+    technologies: ["Svelte", "Node.js", "Kubernetes", "Trivy"],
+    category: "Security",
+    image: "/background.webp",
+    links: {
+      github: "https://github.com/arlintdev/trivyglass",
+      live: null
+    }
+  },
+  {
     title: "Kubernetes Deployment Automation",
     description: "Developed a comprehensive automation framework for Kubernetes deployments, reducing deployment time and minimizing human error.",
     technologies: ["Kubernetes", "Terraform", "Python", "AWS"],
