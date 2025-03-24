@@ -31,6 +31,18 @@ const Education = () => {
             <FaCertificate />
           </div>
           <div className="education-details">
+            <h3>CKAD</h3>
+            <p className="institution">Certified Kubernetes Application Developer</p>
+            <p className="description">
+              Certification demonstrating expertise in Kubernetes and cloud-native applications.
+            </p>
+          </div>
+        </GlassCard>
+        <GlassCard className="education-card" delay={0.4}>
+          <div className="education-icon">
+            <FaCertificate />
+          </div>
+          <div className="education-details">
             <h3>Security+</h3>
             <p className="institution">CompTIA</p>
             <p className="description">

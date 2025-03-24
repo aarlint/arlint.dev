@@ -22,8 +22,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+[contenteditable] {
+  caret-color: transparent;
+}
 
+/* Ensure inputs and textareas keep their caret */
+input, textarea {
+  caret-color: auto;  /* Or set a specific color like 'black' */
+}
+
+/* If you want to target the body but exclude inputs */
+body *:not(input):not(textarea) {
+  caret-color: transparent;
+}
 body {
+  
   font-family: 'Inter', 'Arial', sans-serif;
   font-size: 16px;
   background: linear-gradient(135deg, var(--darker-color) 0%, var(--dark-color) 70%, rgba(116, 72, 206, 0.2) 100%);

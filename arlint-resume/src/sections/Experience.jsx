@@ -19,16 +19,28 @@ const experiences = [
   },
   {
     company: "NTT",
-    position: "DevOps Engineer",
-    period: "2015 - 2020",
+    position: "Senior DevOps Engineer",
+    period: "2017 - 2020",
     description: "Responsible for containerizing complex multi-tier applications and ensuring consistent environments from development to production. Implemented CI/CD pipelines and automated infrastructure management tasks.",
     achievements: [
-      "Containerized legacy applications using Docker",
+      "Managed multiple Kubernetes clusters using Rancher",
       "Developed custom Python scripts for infrastructure automation",
+      "Managed Azure cloud resources and DevOps pipelines",
+    ],
+    technologies: ["Docker", "Python", "K8s", "Node.js", "Azure", "Rancher"]
+  },
+  {
+    company: "NTT",
+    position: "Application Developer and Automation Engineer",
+    period: "2015 - 2017",
+    description: "Worked as a full-stack developer and automation engineer. Developed web applications using Django and Node.js, and created automation scripts to streamline development workflows.",
+    achievements: [
+      "Containerized applications using Docker",
+      "Nodered flow development for process automation",
       "Implemented Ansible for configuration management",
       "Built full-stack applications using Django and Node.js"
     ],
-    technologies: ["Docker", "Python", "Ansible", "Django", "Node.js"]
+    technologies: ["Docker", "Python", "Ansible", "Django", "Node-Red", "Node.js"]
   }
 ];
 
