@@ -31,15 +31,13 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-        working-directory: ./arlint-resume
       - name: Build project
         run: npm run build
-        working-directory: ./arlint-resume
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: arlint-resume/build
+          path: build
 
   # Deployment job
   deploy:
