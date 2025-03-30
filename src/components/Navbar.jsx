@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { personalInfo } from '../data/skills';
+import { personalInfo } from '../data/data';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeSelector from './ThemeSelector';
+import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -80,7 +82,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
           <span>{personalInfo.name.split(' ')[0]}</span>
-          <span className="highlight">{personalInfo.name.split(' ')[1]}</span>
+          <span className="highlight-text">{personalInfo.name.split(' ')[1]}</span>
         </div>
         
         {/* Desktop Menu */}
@@ -105,6 +107,9 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+          <li>
+            <ThemeSelector />
+          </li>
         </ul>
         
         {/* Mobile Menu Button */}
@@ -146,6 +151,9 @@ const Navbar = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <ThemeSelector />
+              </li>
             </ul>
           </motion.div>
         )}

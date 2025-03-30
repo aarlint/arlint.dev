@@ -1,5 +1,6 @@
 import GlassCard from '../components/GlassCard';
 import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
+import { education } from '../data/data';
 
 const Education = () => {
   return (
@@ -10,61 +11,22 @@ const Education = () => {
       </div>
       
       <div className="education-grid">
-        <GlassCard className="education-card" delay={0.2}>
-          <div className="education-icon">
-            <FaGraduationCap />
-          </div>
-          <div className="education-details">
-            <h3>Bachelor of Science</h3>
-            <h4>Information Systems Management</h4>
-            <p className="institution">Utah State University</p>
-            <p className="period">2009 - 2013</p>
-            <p className="description">
-              Comprehensive education in information systems, database management, 
-              software development, and IT infrastructure.
-            </p>
-          </div>
-        </GlassCard>
-        
-        <GlassCard className="education-card" delay={0.4}>
-          <div className="education-icon">
-            <FaCertificate />
-          </div>
-          <div className="education-details">
-            <h3>CKAD</h3>
-            <p className="institution">Certified Kubernetes Application Developer</p>
-            <p className="description">
-              Certification demonstrating expertise in Kubernetes and cloud-native applications.
-            </p>
-          </div>
-        </GlassCard>
-        <GlassCard className="education-card" delay={0.4}>
-          <div className="education-icon">
-            <FaCertificate />
-          </div>
-          <div className="education-details">
-            <h3>Security+</h3>
-            <p className="institution">CompTIA</p>
-            <p className="description">
-              Certification validating baseline skills necessary to perform core security functions
-              and pursue an IT security career.
-            </p>
-          </div>
-        </GlassCard>
-        
-        <GlassCard className="education-card" delay={0.6}>
-          <div className="education-icon">
-            <FaCertificate />
-          </div>
-          <div className="education-details">
-            <h3>Continuous Learning</h3>
-            <p className="description">
-              Regularly participates in workshops, online courses, and industry conferences
-              to stay current with emerging technologies and best practices in DevOps, 
-              cloud computing, and security.
-            </p>
-          </div>
-        </GlassCard>
+        {education.map((edu, index) => (
+          <GlassCard key={index} className="education-card" delay={0.2 + (index * 0.2)}>
+            <div className="education-icon">
+              <FaGraduationCap />
+            </div>
+            <div className="education-details">
+              <h3>{edu.degree}</h3>
+              <h4>{edu.field}</h4>
+              <p className="institution">{edu.institution}</p>
+              <p className="period">{edu.startDate} - {edu.endDate}</p>
+              <p className="description">
+                {edu.achievements.join('. ')}
+              </p>
+            </div>
+          </GlassCard>
+        ))}
       </div>
     </div>
   );

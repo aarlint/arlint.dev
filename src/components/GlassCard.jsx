@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import '../styles/GlassCard.css';
 
 const GlassCard = ({ 
   children, 
@@ -26,7 +27,7 @@ const GlassCard = ({
   const hoverEffect = hover ? {
     whileHover: { 
       scale: 1.02,
-      boxShadow: '0 8px 32px rgba(31, 38, 135, 0.2)'
+      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
     },
     whileTap: { scale: 0.98 }
   } : {};

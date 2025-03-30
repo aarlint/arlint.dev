@@ -1,0 +1,100 @@
+.theme-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.theme-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cardBackground);
+  color: var(--textColor);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: var(--cardBackground);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--borderColor);
+  z-index: 1001;
+}
+
+.theme-option {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-option svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.theme-option:hover {
+  transform: scale(1.05);
+  background-color: var(--backgroundColor);
+}
+
+.theme-option.active {
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+/* Backdrop */
+.theme-selector::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.theme-selector[data-open="true"]::before {
+  display: block;
+  opacity: 1;
+} 

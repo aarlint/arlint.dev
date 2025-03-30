@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import GlassCard from '../components/GlassCard';
-import { personalInfo } from '../data/skills';
-import { FaEnvelope, FaPhone, FaGithub, FaFileDownload, FaPaperPlane } from 'react-icons/fa';
+import { contact, personalInfo } from '../data/data';
+import { FaEnvelope, FaPhone, FaGithub, FaFileDownload, FaPaperPlane, FaLinkedin, FaTwitter } from 'react-icons/fa';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
@@ -32,7 +32,7 @@ const Contact = () => {
     // Create a mailto link with the form data
     const subject = `Message from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:${personalInfo.email || 'austin@arlint.dev'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Open the email client
     window.location.href = mailtoLink;
@@ -73,25 +73,50 @@ const Contact = () => {
           
           <div className="contact-item">
             <FaEnvelope className="contact-icon" />
-            <a href={`mailto:${personalInfo.email || 'austin@arlint.dev'}`}>
-              {personalInfo.email || 'austin@arlint.dev'}
+            <a href={`mailto:${contact.email}`}>
+              {contact.email}
             </a>
           </div>
           
           <div className="contact-item">
             <FaPhone className="contact-icon" />
-            <span>{personalInfo.phone || '(406) 218 6028'}</span>
+            <span>{contact.location}</span>
           </div>
           
-          <div className="contact-item">
-            <FaGithub className="contact-icon" />
-            <a 
-              href="https://github.com/aarlint" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              GitHub: aarlint
-            </a>
+          <div className="social-links">
+            {contact.socialLinks.github && (
+              <a 
+                href={contact.socialLinks.github}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaGithub className="social-icon" />
+                GitHub
+              </a>
+            )}
+            {contact.socialLinks.linkedin && (
+              <a 
+                href={contact.socialLinks.linkedin}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaLinkedin className="social-icon" />
+                LinkedIn
+              </a>
+            )}
+            {contact.socialLinks.twitter && (
+              <a 
+                href={contact.socialLinks.twitter}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                <FaTwitter className="social-icon" />
+                Twitter
+              </a>
+            )}
           </div>
           
           <div className="resume-download">

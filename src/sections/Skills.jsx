@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { skills } from '../data/skills';
+import { skills } from '../data/data';
 import GlassCard from '../components/GlassCard';
 import { FaCode, FaStar } from 'react-icons/fa';
 // eslint-disable-next-line no-unused-vars
@@ -20,7 +20,7 @@ const Skills = () => {
       </div>
       
       <div className="skills-grid">
-        {skills.map((skill, index) => (
+        {skills.filter(skill => skill.show).map((skill, index) => (
           <GlassCard
             key={skill.name}
             className={`skill-card ${selectedSkill === skill ? 'selected expanded-skill' : ''}`}

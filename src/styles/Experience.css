@@ -1,0 +1,144 @@
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+.experience-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header svg {
+  color: var(--primaryColor);
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.section-header h2 {
+  color: var(--primaryColor);
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--primaryColor);
+  opacity: 0.3;
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--cardBackground);
+  border-radius: 0.5rem;
+  border: 1px solid var(--borderColor);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  border: 2px solid var(--cardBackground);
+}
+
+.experience-item h3 {
+  color: var(--primaryColor);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.experience-item .company {
+  color: var(--secondaryColor);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item .period {
+  color: var(--secondaryColor);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.experience-item .description {
+  color: var(--textColor);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.experience-item .achievements {
+  margin-bottom: 1rem;
+}
+
+.experience-item .achievements h4 {
+  color: var(--primaryColor);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.experience-item .achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-item .achievements li {
+  color: var(--textColor);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.experience-item .achievements li::before {
+  content: "•";
+  color: var(--primaryColor);
+  margin-right: 0.5rem;
+}
+
+.experience-item .technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-item .tech-tag {
+  background-color: var(--backgroundColor);
+  color: var(--primaryColor);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--borderColor);
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 2rem 1rem;
+  }
+
+  .experience-item {
+    padding: 1rem;
+  }
+} 

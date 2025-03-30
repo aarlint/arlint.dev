@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { personalInfo } from '../data/skills';
+import { personalInfo } from '../data/data';
 import GlassCard from '../components/GlassCard';
 
 const Home = () => {

@@ -1,0 +1,119 @@
+:root {
+  /* Theme variables will be set dynamically */
+  --primaryColor: #007bff;
+  --secondaryColor: #6c757d;
+  --backgroundColor: #ffffff;
+  --textColor: #333333;
+  --accentColor: #ffc107;
+  --cardBackground: #f8f9fa;
+  --borderColor: #dee2e6;
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Theme-specific background styles */
+body[data-theme="light"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+body[data-theme="dark"] {
+  background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+}
+
+body[data-theme="ocean"] {
+  background: linear-gradient(135deg, #e3f2fd 0%, #b3e5fc 100%);
+}
+
+body[data-theme="forest"] {
+  background: linear-gradient(135deg, #f1f8e9 0%, #c8e6c9 100%);
+}
+
+body[data-theme="purpleGlass"] {
+  background: linear-gradient(135deg, #0f0f1c 0%, #080812 70%, rgba(116, 72, 206, 0.2) 100%);
+}
+
+/* Add smooth transitions for all theme-dependent properties */
+* {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Theme-specific styles */
+.card {
+  background-color: var(--cardBackground);
+  border: 1px solid var(--borderColor);
+}
+
+.button {
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+.button:hover {
+  background-color: var(--accentColor);
+}
+
+.link {
+  color: var(--primaryColor);
+}
+
+.link:hover {
+  color: var(--accentColor);
+}
+
+/* Highlight styles */
+.highlight {
+  color: var(--primaryColor);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primaryColor);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active link styles */
+.active {
+  color: var(--primaryColor);
+  font-weight: 500;
+}
+
+/* Underline styles */
+.underline {
+  text-decoration: underline;
+  text-decoration-color: var(--primaryColor);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Link hover effect */
+a:not(.button):hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+  text-decoration-color: var(--primaryColor);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+} 

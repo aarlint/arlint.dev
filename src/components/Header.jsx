@@ -1,5 +1,6 @@
 import { personalInfo } from '../data/skills';
 import AnimatedSection from './AnimatedSection';
+import '../styles/Hero.css';
 
 const Header = () => {
   return (
