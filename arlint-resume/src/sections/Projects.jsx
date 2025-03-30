@@ -6,6 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
+    title: "German Language Learning App",
+    description: "Developed a web application for learning German using React, Node.js, Docusaurus.",
+    technologies: ["React", "Node.js", "Docusaurus"],
+    category: "Web Development",
+    image: "/background.webp",
+    links: {
+      live: "https://german.arlint.dev",
+      github: "https://github.com/aarlint/german"
+    }
+  },
+  {
     title: "Trivy Glass, Vulnerability Scanner Visualizer",
     description: "Developed a web application to visualize vulnerabilities in container images on K8s using Trivy Operator.",
     technologies: ["Svelte", "Node.js", "Kubernetes", "Trivy"],
