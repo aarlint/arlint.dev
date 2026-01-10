@@ -168,6 +168,15 @@ export const education = [
 // Projects Section
 export const projects = [
   {
+    name: "New Paths for Health",
+    description: "Developed a web application for New Paths for Health",
+    technologies: ["Javascript", "HTML", "CSS"],
+    category: "Web Development",
+    image: "/background.webp",
+    link: "https://newpathsforhealth.com",
+    github: "https://github.com/tarlint/portal",
+  },
+  {
     name: "German Language Learning App",
     description: "Developed a web application for learning German using React, Node.js, Docusaurus.",
     technologies: ["React", "Node.js", "Docusaurus"],
