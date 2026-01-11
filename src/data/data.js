@@ -115,12 +115,13 @@ export const experience = [
     endDate: "Present",
     description: "Leading DevSecOps initiatives and managing cloud infrastructure across multiple environments.",
     achievements: [
-      "Managed multiple Kubernetes clusters across various environments",
-      "Implemented comprehensive CI/CD pipelines",
-      "Optimized cloud infrastructure costs",
-      "Enhanced security posture through automated compliance checks"
+      "Managed 12 Kubernetes clusters across dev, staging, and production environments with 4+ nodes each and hundreds of pods",
+      "Maintained 99.99% uptime across all cluster environments",
+      "Deployed and maintained Big Bang platform including logging, monitoring, and Vault infrastructure",
+      "Created and maintained CI/CD pipelines for application deployment and updates",
+      "Performed STIG compliance hardening on Kubernetes clusters"
     ],
-    technologies: ["Kubernetes", "AWS", "Terraform", "Docker", "GitHub Actions"]
+    technologies: ["Kubernetes", "AWS", "Terraform", "Docker", "GitHub Actions", "Big Bang", "Vault"]
   },
   {
     company: "NTT",
@@ -130,10 +131,10 @@ export const experience = [
     endDate: "2022",
     description: "Developed and maintained infrastructure automation and deployment pipelines.",
     achievements: [
-      "Automated infrastructure management using Ansible",
+      "Deployed and managed 700+ server instances across Linux and Windows environments",
+      "Reduced deployment time from hours to minutes through automation",
       "Developed full-stack applications using Django and NodeJS",
-      "Implemented containerization strategies",
-      "Managed CI/CD pipelines using Jenkins"
+      "Implemented containerization strategies and managed CI/CD pipelines using Jenkins"
     ],
     technologies: ["Python", "Django", "NodeJS", "Ansible", "Docker", "Jenkins"]
   }
@@ -283,6 +284,22 @@ export const contact = {
     twitter: "https://twitter.com/austinarlint"
   }
 };
+
+// Languages Section
+export const languages = [
+  {
+    name: "English",
+    proficiency: "Native"
+  },
+  {
+    name: "German",
+    proficiency: "Conversational"
+  },
+  {
+    name: "Spanish",
+    proficiency: "Conversational"
+  }
+];
 
 // Navigation Configuration
 export const navigation = [
