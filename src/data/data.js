@@ -158,10 +158,10 @@ export const education = [
     degree: "Security+",
     field: "Information Security",
     location: "Online",
-    startDate: "2020",
-    endDate: "Present",
+    startDate: "2023",
+    endDate: "2026",
     achievements: [
-      "Holds active Security+ certification"
+      "Active certification, eligible for renewal"
     ]
   }
 ];
