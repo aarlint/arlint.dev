@@ -111,32 +111,52 @@ export const experience = [
     company: "RAFT",
     position: "Senior DevSecOps Engineer",
     location: "Remote",
-    startDate: "2022",
+    startDate: "2023",
     endDate: "Present",
-    description: "Leading DevSecOps initiatives and managing cloud infrastructure across multiple environments.",
+    description: "Team: CNAP on Platform One (Software Factory, Air Force). Leading DevSecOps initiatives and managing cloud infrastructure in AWS GovCloud.",
     achievements: [
-      "Managed 12 Kubernetes clusters across dev, staging, and production environments with 4+ nodes each and hundreds of pods",
-      "Maintained 99.99% uptime across all cluster environments",
-      "Deployed and maintained Big Bang platform including logging, monitoring, and Vault infrastructure",
-      "Created and maintained CI/CD pipelines for application deployment and updates",
-      "Performed STIG compliance hardening on Kubernetes clusters"
+      "Responsible for BigBang deployments and upgrades across production environments",
+      "Migrated KeyCloak Identity Management with zero downtime from CNAP to P1 Common Services",
+      "Managed IAC of P1 Common Services with Terraform for AWS GovCloud",
+      "Developed Flux configuration for production and staging EKS environments",
+      "Developed and maintained Terraform pipelines for feature changes and deployments, used by 5+ engineers",
+      "Deployed and managed Hashicorp Vault with PKI",
+      "Converted Atlantis and Terragrunt IAC to vanilla Terraform with GitLab Pipelines",
+      "Developed custom EKS Terraform module for AWS GovCloud"
     ],
-    technologies: ["Kubernetes", "AWS", "Terraform", "Docker", "GitHub Actions", "Big Bang", "Vault"]
+    technologies: ["Kubernetes", "AWS GovCloud", "Terraform", "Flux", "GitLab", "Big Bang", "Vault", "EKS"]
   },
   {
     company: "NTT",
-    position: "DevOps Engineer",
+    position: "Senior Application Developer and Operator",
     location: "Remote",
-    startDate: "2020",
-    endDate: "2022",
-    description: "Developed and maintained infrastructure automation and deployment pipelines.",
+    startDate: "2019",
+    endDate: "2023",
+    description: "Led Kubernetes infrastructure and automation platform development for enterprise clients.",
     achievements: [
-      "Deployed and managed 700+ server instances across Linux and Windows environments",
-      "Reduced deployment time from hours to minutes through automation",
-      "Developed full-stack applications using Django and NodeJS",
-      "Implemented containerization strategies and managed CI/CD pipelines using Jenkins"
+      "Deployed and managed hundreds of Kubernetes clusters (EKS, AKS, Standalone) using Rancher Server",
+      "Deployed AWX (Ansible Tower) on K8s and managed hundreds of playbooks for 3 engineering teams",
+      "Developed remote Ansible runner using Ansible-Runner containers and Knative that terminated upon completion, eliminating idle resource usage",
+      "Developed containerized applications using Go, Python, Node.js, Django, and Vue.js",
+      "Created CI/CD pipelines using GitHub Actions for Core Systems DevOps",
+      "Developed an Automation Platform Application in Django using containers, AWX, Rancher, and HashiCorp tools"
     ],
-    technologies: ["Python", "Django", "NodeJS", "Ansible", "Docker", "Jenkins"]
+    technologies: ["Kubernetes", "Rancher", "AWX", "Go", "Python", "Node.js", "Django", "Vue.js", "GitHub Actions"]
+  },
+  {
+    company: "NTT",
+    position: "Senior Application Developer and Operator",
+    location: "Remote",
+    startDate: "2016",
+    endDate: "2019",
+    description: "Designed and implemented large-scale automation solutions for enterprise infrastructure.",
+    achievements: [
+      "Designed and maintained all deployment, maintenance, and upgrade automation for 1500+ systems (Windows/Linux) using Ansible and GitOps",
+      "Integrated Ansible playbooks with Jenkins to reduce support times",
+      "Reduced VM creation/deployment from half a day to 10 minutes",
+      "Led emergency systems recovery effort: designed automation to rebuild and restore 1300+ VMs; served as technical lead with a team of 15 for three weeks"
+    ],
+    technologies: ["Ansible", "Jenkins", "GitOps", "Linux", "Windows", "Python"]
   }
 ];
 
