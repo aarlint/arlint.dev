@@ -1,6 +1,6 @@
 import GlassCard from '../components/GlassCard';
-import { FaUser } from 'react-icons/fa';
-import { about } from '../data/data';
+import { FaUser, FaLanguage } from 'react-icons/fa';
+import { about, languages } from '../data/data';
 
 const About = () => {
   return (
@@ -33,6 +33,18 @@ const About = () => {
             Currently holds a <span className="highlight">Secret Clearance</span> and is eligible for{' '}
             <span className="highlight">Top Secret</span> clearance.
           </p>
+        </GlassCard>
+
+        <GlassCard className="about-card" delay={0.8}>
+          <h3><FaLanguage style={{ marginRight: '8px', verticalAlign: 'middle' }} />Languages</h3>
+          <ul className="expertise-list">
+            {languages.map((lang, index) => (
+              <li key={index}>
+                <span className="expertise-highlight">{lang.name}</span>
+                <span className="language-proficiency"> - {lang.proficiency}</span>
+              </li>
+            ))}
+          </ul>
         </GlassCard>
       </div>
     </div>
