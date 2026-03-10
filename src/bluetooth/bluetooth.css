@@ -674,6 +674,49 @@
   line-height: 1.6;
 }
 
+.bt-alt-browsers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.bt-alt-browser-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(116, 72, 206, 0.1);
+  border: 1px solid rgba(116, 72, 206, 0.25);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bt-alt-browser-card:hover {
+  background: rgba(116, 72, 206, 0.2);
+  border-color: var(--primaryColor);
+  transform: translateY(-2px);
+}
+
+.bt-alt-browser-card strong {
+  color: var(--primaryLight);
+  font-size: 1.05rem;
+}
+
+.bt-alt-browser-card span {
+  color: var(--textSecondary);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.bt-alt-note {
+  font-size: 0.85rem;
+  color: var(--textSecondary);
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
 .bt-error-banner {
   background: rgba(231, 76, 60, 0.15);
   border: 1px solid rgba(231, 76, 60, 0.3);
