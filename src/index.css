@@ -427,32 +427,38 @@ a:hover {
   width: 9rem;
 }
 
-/* Skills — same pattern. Squiggle ABOVE-LEFT of the grid, arrow=down-left,
-   arrowhead lands at top-left of the first skill card. */
+/* Skills — squiggle sits to the upper-RIGHT of the grid (the title's
+   max-width is 30ch on the left, so the right side is empty). Arrow=down-left
+   gestures back at the buzzword-dense grid. */
 .skills-grid { position: relative; overflow: visible; }
 .squiggle-skills {
-  top: -4.5rem;
-  left: -0.5rem;
-  width: 14rem;
+  top: -8.5rem;
+  right: 0;
+  width: 12rem;
 }
 
-/* Further history — squiggle floats ABOVE the toggle button. Arrow=down
-   so the arrowhead at the bottom of the SVG (column-reverse: SVG below
-   text) sits just above the toggle row. */
+/* Further history — squiggle hovers just above the toggle. Shrunk so it
+   doesn't overflow into the tech-tag row of the role above. */
 .further-history { position: relative; overflow: visible; }
 .squiggle-further {
-  bottom: 100%;
-  right: 28%;
-  margin-bottom: -0.5rem;
-  width: 9rem;
+  top: -3rem;
+  right: 16%;
+  width: 7.5rem;
+}
+.squiggle-further .squiggle-arrow {
+  width: 40px;
+  height: 52px;
+}
+.squiggle-further .squiggle-text {
+  font-size: 1.2rem;
 }
 
-/* Colophon — squiggle floats ABOVE the message, arrow=down points at it. */
+/* Colophon — squiggle drops INTO the colophon's top padding so the arrow's
+   tip lands close to the message (colophon has ~80px top padding). */
 .colophon { position: relative; overflow: visible; }
 .squiggle-colophon {
-  bottom: 100%;
+  top: -3rem;
   left: 0.5rem;
-  margin-bottom: -0.5rem;
   width: 12rem;
 }
 
