@@ -65,17 +65,26 @@ function Masthead() {
   const [first, ...rest] = personalInfo.name.split(' ');
   return (
     <section className="masthead fade-in" id="top">
-      <div className="masthead-eyebrow">Senior DevSecOps · {personalInfo.location}</div>
-      <h1 className="masthead-name">
-        {first} <em>{rest.join(' ')}</em>
-      </h1>
-      <p className="masthead-tagline">{personalInfo.tagline}</p>
-      <div className="masthead-meta">
-        <span className="masthead-meta-item">
-          <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
-        </span>
-        <span className="masthead-meta-item">{personalInfo.website}</span>
-        <span className="masthead-meta-item">{personalInfo.clearance}</span>
+      <div className="masthead-grid">
+        <div className="masthead-text">
+          <div className="masthead-eyebrow">Senior DevSecOps · {personalInfo.location}</div>
+          <h1 className="masthead-name">
+            {first} <em>{rest.join(' ')}</em>
+          </h1>
+          <p className="masthead-tagline">{personalInfo.tagline}</p>
+          <div className="masthead-meta">
+            <span className="masthead-meta-item">
+              <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
+            </span>
+            <span className="masthead-meta-item">{personalInfo.website}</span>
+            <span className="masthead-meta-item">{personalInfo.clearance}</span>
+          </div>
+        </div>
+        {personalInfo.portrait && (
+          <figure className="masthead-portrait">
+            <img src={personalInfo.portrait} alt={`${personalInfo.name} portrait`} />
+          </figure>
+        )}
       </div>
     </section>
   );

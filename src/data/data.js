@@ -2,6 +2,7 @@
 export const personalInfo = {
   name: "Austin Arlint",
   title: "Senior DevSecOps Engineer",
+  portrait: "/lusterjack.jpg",
   tagline: "Zero-trust platforms, network intelligence, and DevSecOps for regulated environments.",
   location: "United States",
   email: "austin@arlint.dev",
