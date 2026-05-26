@@ -2,9 +2,9 @@
    Editorial Resume — Austin Arlint
    Paper-feel typography, generous whitespace, hairline rules.
    Light + dark modes. Print-optimized for one-click PDF.
+   Fonts are loaded via <link> in index.html (preconnect + parallel)
+   so they don't wait on CSS parsing — eliminates FOUT on reload.
    ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --paper: #faf7f0;
