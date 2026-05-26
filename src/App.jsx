@@ -49,10 +49,25 @@ const SQUIGGLE_ARROWS = {
     curve: 'M14 78 C 18 50, 44 72, 50 46 C 58 24, 58 10, 72 14',
     head: 'M66 8 L 72 14 L 64 20',
   },
+  'down-left': {
+    vb: '0 0 90 90',
+    curve: 'M76 12 C 72 40, 46 28, 40 44 C 32 66, 32 80, 18 76',
+    head: 'M24 82 L 18 76 L 26 70',
+  },
+  'down-right': {
+    vb: '0 0 90 90',
+    curve: 'M14 12 C 18 40, 44 28, 50 44 C 58 66, 58 80, 72 76',
+    head: 'M66 82 L 72 76 L 64 70',
+  },
   left: {
     vb: '0 0 110 50',
     curve: 'M100 36 C 70 32, 60 12, 30 18 C 18 22, 14 22, 8 22',
     head: 'M16 16 L 8 22 L 16 28',
+  },
+  right: {
+    vb: '0 0 110 50',
+    curve: 'M10 36 C 40 32, 50 12, 80 18 C 92 22, 96 22, 102 22',
+    head: 'M94 16 L 102 22 L 94 28',
   },
   up: {
     vb: '0 0 70 100',
@@ -205,7 +220,7 @@ function Summary() {
               <div className="stat-label">{s.label}</div>
             </div>
           ))}
-          <Squiggle className="squiggle-stats" arrow="up-left" rotation={5}>
+          <Squiggle className="squiggle-stats" arrow="down-left" rotation={5}>
             really.<br />don't do<br />the math.
           </Squiggle>
         </aside>
@@ -249,7 +264,7 @@ function Experience() {
 
       {furtherHistory.length > 0 && (
         <div className="further-history">
-          <Squiggle className="squiggle-further" arrow="up" rotation={-3}>
+          <Squiggle className="squiggle-further" arrow="down" rotation={-3}>
             click. I have receipts.
           </Squiggle>
           <button
@@ -292,10 +307,10 @@ function Skills() {
     <section className="section" id="skills">
       <div className="section-label">03 — Capabilities</div>
       <h2 className="section-title">Platform engineering, DevSecOps, and agentic AI — one practice, five surfaces.</h2>
-      <Squiggle className="squiggle-skills" arrow="left" rotation={-4}>
-        ok yes — buzzwords.<br />but I've actually used them.
-      </Squiggle>
       <div className="skills-grid">
+        <Squiggle className="squiggle-skills" arrow="down-left" rotation={-4}>
+          ok yes — buzzwords.<br />but I've actually used them.
+        </Squiggle>
         {skillCategories.map((cat) => (
           <div key={cat.name}>
             <h3 className="skill-category-name">{cat.name}</h3>

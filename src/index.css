@@ -380,65 +380,79 @@ a:hover {
   flex: 0 0 auto;
 }
 
-/* Layout per arrow direction */
-.squiggle-up-left,
-.squiggle-up-right {
-  flex-direction: column;
-  align-items: flex-start;
-}
-.squiggle-up {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.squiggle-down {
-  flex-direction: column-reverse;
-  align-items: center;
-  text-align: center;
-}
-.squiggle-left {
-  flex-direction: row;
-  align-items: center;
-  gap: 0.25rem;
-}
+/* Layout per arrow direction — text always sits on the side opposite the
+   arrowhead so the eye reads text → arrow → target. */
+.squiggle-up-left   { flex-direction: column; align-items: flex-start; }
+.squiggle-up-right  { flex-direction: column; align-items: flex-end; }
+.squiggle-down-left { flex-direction: column-reverse; align-items: flex-start; }
+.squiggle-down-right { flex-direction: column-reverse; align-items: flex-end; }
+.squiggle-up        { flex-direction: column; align-items: center; text-align: center; }
+.squiggle-down      { flex-direction: column-reverse; align-items: center; text-align: center; }
+.squiggle-left      { flex-direction: row; align-items: center; gap: 0.35rem; }
+.squiggle-right     { flex-direction: row-reverse; align-items: center; gap: 0.35rem; }
 
 .squiggle-up-left .squiggle-arrow,
-.squiggle-up-right .squiggle-arrow { width: 78px; height: 78px; margin-bottom: -4px; }
-.squiggle-up .squiggle-arrow { width: 56px; height: 76px; margin-bottom: -2px; }
-.squiggle-down .squiggle-arrow { width: 56px; height: 76px; margin-top: -2px; }
-.squiggle-left .squiggle-arrow { width: 100px; height: 46px; }
+.squiggle-up-right .squiggle-arrow,
+.squiggle-down-left .squiggle-arrow,
+.squiggle-down-right .squiggle-arrow { width: 78px; height: 78px; }
 
-/* Per-location placement */
+.squiggle-up-left .squiggle-arrow,
+.squiggle-up-right .squiggle-arrow { margin-bottom: -4px; }
+.squiggle-down-left .squiggle-arrow,
+.squiggle-down-right .squiggle-arrow { margin-top: -4px; }
 
-/* Stats column — tucked into top-right of the stats card, arrow points up-left at "17yrs" */
-.stats { position: relative; }
-.squiggle-stats {
-  top: -2.5rem;
-  right: -3.5rem;
-  width: 9rem;
-}
+.squiggle-up .squiggle-arrow,
+.squiggle-down .squiggle-arrow { width: 56px; height: 80px; }
+.squiggle-up .squiggle-arrow { margin-bottom: -2px; }
+.squiggle-down .squiggle-arrow { margin-top: -2px; }
 
-/* Skills section — arrow pulls leftward toward the section title */
+.squiggle-left .squiggle-arrow,
+.squiggle-right .squiggle-arrow { width: 100px; height: 46px; }
+
+/* Per-location placement.
+   Strategy: the squiggle box's "arrow corner" should land within ~30px
+   of the target. Arrow direction picks which corner the arrowhead lives
+   in; positioning then nudges that corner over the target. */
+
 .section { position: relative; }
-.squiggle-skills {
-  top: -2.5rem;
-  right: 0;
-  width: 18rem;
-}
 
-/* Further history — sits between toggle and the list, arrow points up at the toggle */
-.further-history { position: relative; }
-.squiggle-further {
-  top: -3.5rem;
-  right: 12%;
+/* Stats — squiggle sits ABOVE-LEFT of stats. Arrow=down-left so the
+   arrowhead lives at the lower-left of the SVG (which is the lower-left
+   of the squiggle box, with column-reverse + flex-start). Place that
+   corner just above "17yrs" at top-left of .stats. */
+.stats { position: relative; overflow: visible; }
+.squiggle-stats {
+  top: -4.75rem;
+  left: -0.75rem;
   width: 9rem;
 }
 
-/* Colophon — floats above the message, arrow points down at it */
-.colophon { position: relative; }
-.squiggle-colophon {
+/* Skills — same pattern. Squiggle ABOVE-LEFT of the grid, arrow=down-left,
+   arrowhead lands at top-left of the first skill card. */
+.skills-grid { position: relative; overflow: visible; }
+.squiggle-skills {
   top: -4.5rem;
-  left: 1rem;
+  left: -0.5rem;
+  width: 14rem;
+}
+
+/* Further history — squiggle floats ABOVE the toggle button. Arrow=down
+   so the arrowhead at the bottom of the SVG (column-reverse: SVG below
+   text) sits just above the toggle row. */
+.further-history { position: relative; overflow: visible; }
+.squiggle-further {
+  bottom: 100%;
+  right: 28%;
+  margin-bottom: -0.5rem;
+  width: 9rem;
+}
+
+/* Colophon — squiggle floats ABOVE the message, arrow=down points at it. */
+.colophon { position: relative; overflow: visible; }
+.squiggle-colophon {
+  bottom: 100%;
+  left: 0.5rem;
+  margin-bottom: -0.5rem;
   width: 12rem;
 }
 
