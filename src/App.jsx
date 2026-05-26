@@ -67,7 +67,7 @@ function Masthead() {
     <section className="masthead fade-in" id="top">
       <div className="masthead-grid">
         <div className="masthead-text">
-          <div className="masthead-eyebrow">Senior DevSecOps · {personalInfo.location}</div>
+          <div className="masthead-eyebrow">Forward Deployed · Platform &amp; AI · {personalInfo.location}</div>
           <h1 className="masthead-name">
             {first} <em>{rest.join(' ')}</em>
           </h1>
@@ -116,7 +116,7 @@ function Experience() {
   return (
     <section className="section" id="experience">
       <div className="section-label">02 — Experience</div>
-      <h2 className="section-title">A practice rooted in security, automation, and the platforms beneath them.</h2>
+      <h2 className="section-title">Embedded with teams building platforms — and increasingly, the AI tooling around them.</h2>
       <div className="experience-list">
         {experience.map((role) => (
           <article key={role.company} className="role">

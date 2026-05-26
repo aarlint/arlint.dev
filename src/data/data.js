@@ -1,9 +1,9 @@
 // Personal Information
 export const personalInfo = {
   name: "Austin Arlint",
-  title: "Senior DevSecOps Engineer",
+  title: "Forward Deployed Platform & AI Engineer",
   portrait: "/lusterjack.jpg",
-  tagline: "Zero-trust platforms, network intelligence, and DevSecOps for regulated environments.",
+  tagline: "I embed with teams, build the platforms and AI-native tools they actually need, and ship them through to production — including the regulated, zero-trust corners.",
   location: "United States",
   email: "austin@arlint.dev",
   website: "arlint.dev",
@@ -17,10 +17,10 @@ export const personalInfo = {
 
 // Summary / About
 export const about = {
-  lead: "Senior DevSecOps engineer specializing in zero-trust network architecture, cloud security automation, and compliance tooling for DoD and regulated environments.",
-  body: "I design and operate the security backbone of a cloud-access platform serving DoD mission partners — building network intelligence pipelines that correlate Palo Alto traffic, Appgate SDP tunnels, and AWS Transit Gateway routing to quantify zero-trust posture in real time. My day-to-day spans firewall rule analysis, OpenSearch query engineering, STIG/RMF automation, Kubernetes operations, and shipping internal tools that turn security telemetry into evidence executives and assessors can act on.",
+  lead: "Forward-deployed engineer who embeds with teams, builds the platforms and AI-native tools they actually need, and owns them through to production.",
+  body: "I work at the seam between platform engineering and applied AI. On the platform side, I design and operate the network-intelligence and compliance backbone of a zero-trust cloud-access platform serving DoD mission partners — Palo Alto, Appgate SDP, Transit Gateway, OpenSearch, EKS, Terraform. On the AI side, I build MCP servers, agent workflows, and local-LLM tooling that turn raw telemetry and unstructured work into something a person — or an agent — can act on. I move fast, take ownership end-to-end, and keep both the security posture and the developer experience honest.",
   stats: [
-    { value: "8+", label: "Years in DevSecOps" },
+    { value: "8+", label: "Years shipping platforms" },
     { value: "AWS GovCloud", label: "Production environment" },
     { value: "Secret", label: "Clearance" }
   ]
@@ -187,7 +187,7 @@ export const projects = [
 export const contact = {
   email: "austin@arlint.dev",
   location: "United States",
-  availability: "Open to senior DevSecOps and platform-security roles",
+  availability: "Open to forward-deployed, platform, and AI engineering roles",
   socialLinks: {
     github: "https://github.com/aarlint",
     linkedin: "https://linkedin.com/in/austinarlint",
