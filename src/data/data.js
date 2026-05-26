@@ -17,8 +17,8 @@ export const personalInfo = {
 
 // Summary / About
 export const about = {
-  lead: "Forward-deployed engineer building internal platforms, shift-left DevSecOps, and agentic AI tooling for teams that have to ship — fast, secure, and under audit.",
-  body: "I work at the seam of three disciplines that have stopped being separate. On the platform side, I build paved roads — Kubernetes on EKS, Terraform modules, GitOps pipelines, and developer-experience tooling that turns ad-hoc operations into a product engineers can self-serve. On the DevSecOps side, I run the network-intelligence and compliance backbone of a zero-trust cloud-access platform for DoD mission partners — Palo Alto, Appgate SDP, Transit Gateway, OpenSearch — with policy-as-code guardrails, SBOM and supply-chain scanning, and STIG/RMF automation woven into CI/CD so compliance falls out of the build rather than living in a spreadsheet. On the AI side, I build MCP servers, RAG pipelines, agent workflows, and local-LLM tooling that turn telemetry, transcripts, and unstructured work into something a human — or an agent — can act on. I embed deep, take ownership end-to-end, and treat platform, security posture, and developer experience as one product.",
+  lead: "Forward-deployed engineer and AI leader for federal Zero-Trust and DevSecOps work — embedded with teams, shipping the platforms, security tooling, and agentic AI that turn regulated work into something a small team can actually move.",
+  body: "I work at the seam of three disciplines that have stopped being separate. On the AI side, I set direction and ship the engineering — MCP servers, RAG pipelines, agent workflows, and the evaluation harness that anchors model behavior in regulated environments, with a bias toward self-hosted and open-source models that respect data boundaries. On the DevSecOps side, I run the network-intelligence and compliance backbone of a Zero-Trust cloud-access platform for DoD mission partners — Palo Alto, Appgate SDP, Transit Gateway, OpenSearch — with policy-as-code guardrails, SBOM and supply-chain scanning, and STIG/RMF automation woven into CI/CD so compliance falls out of the build rather than living in a spreadsheet. On the platform side, I build the paved roads underneath both — Kubernetes on EKS, Terraform modules, GitOps pipelines, and developer-experience tooling that turns ad-hoc operations into a product engineers can self-serve. I embed deep, take ownership end-to-end, and treat platform, security posture, and AI as one practice.",
   stats: [
     { value: "17yrs", label: "Shipping in tech" },
     { value: "GovCloud", label: "Production scale" },
@@ -97,17 +97,18 @@ export const experience = [
     location: "Remote",
     startDate: "Aug 2025",
     endDate: "Present",
-    summary: "Founding AI engineer setting product direction and shipping the platform end-to-end. Own the agent architecture, model integrations, and the engineering scaffolding that makes the product feel like a single coherent surface.",
+    summary: "AI leader at a federal DevSecOps practice — set the firm's AI direction and ship the engineering work behind it. Focus on agentic systems that respect data boundaries, self-hosted and open-source models, and AI tooling that wraps the Zero-Trust and DevSecOps work the firm is already known for.",
     achievements: [
-      "Set AI strategy and translate it into shipping code — agent architecture, MCP integrations, RAG pipelines, and the evaluation harness that anchors model behavior in production",
-      "Build the developer-experience surface around the agents — telemetry, evals, and prompt-iteration loops that let the team move fast without losing trust in what the model is doing",
-      "Own the full stack of decisions a small team has to make early: model choice, data plumbing, observability, deploy pipeline, and the product UX engineers and users actually touch"
+      "Set the firm's AI direction: opinionated on self-hosted and open-source models, deterministic evaluations, and agent traces that survive an audit — the AI strategy a regulated client can actually adopt",
+      "Architect and ship the AI layer end-to-end — MCP servers, RAG pipelines over operational and security corpora, and agent workflows that turn DevSecOps telemetry into a conversational surface for engineers and operators",
+      "Build the platform underneath the AI: model gateways, evaluation harnesses, agent observability, and the developer-experience scaffolding that lets a small team move fast without losing trust in what the model is doing",
+      "Translate AI capability into the firm's existing practice areas — Zero-Trust, ICAM, PKI, cloud-native infrastructure — so the AI work compounds the security posture rather than fighting it"
     ],
-    technologies: ["Claude API", "MCP", "Agent orchestration", "RAG", "TypeScript", "Node.js", "Evals"]
+    technologies: ["Claude API", "MCP", "Agent orchestration", "RAG", "Local LLMs", "TypeScript", "Python", "Evals"]
   },
   {
     company: "Raft",
-    position: "Staff DevSecOps Engineer · Contract",
+    position: "Staff DevSecOps Engineer",
     location: "Remote",
     startDate: "Nov 2023",
     endDate: "Present",
