@@ -195,7 +195,7 @@ function Masthead() {
                 <path d="M72 26 L 78 14 L 66 18" />
               </svg>
               <span className="portrait-annotation-text">
-                hair and mustache:<br />free.99
+                hair and mustache<br />available with request
               </span>
             </div>
           </figure>
