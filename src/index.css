@@ -556,6 +556,150 @@ a:hover {
   color: var(--ink-faint);
 }
 
+/* Further history — collapsed list of earlier roles */
+
+.further-history {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.further-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.further-toggle:hover {
+  color: var(--accent);
+}
+
+.further-toggle-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+  transition: background 0.2s ease;
+}
+
+.further-toggle:hover .further-toggle-rule {
+  background: var(--accent);
+}
+
+.further-toggle-label {
+  white-space: nowrap;
+}
+
+.further-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+.further-toggle:hover .further-toggle-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.further-list {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.6, 0.2, 1);
+  overflow: hidden;
+}
+
+.further-list.is-open {
+  grid-template-rows: 1fr;
+}
+
+.further-list > * {
+  min-height: 0;
+}
+
+.further-list-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.further-role {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.further-role:first-child {
+  border-top: none;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .further-role {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+.further-period {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.further-company {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.further-position {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.further-location {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.4rem;
+}
+
+.further-summary {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
 /* Skills */
 
 .skills-grid {
@@ -937,4 +1081,14 @@ a:hover {
   .colophon { display: none; }
 
   a { border-bottom: none; color: inherit; }
+
+  /* Further history always expanded in print, even if user hadn't toggled it */
+  .further-list { grid-template-rows: 1fr !important; overflow: visible !important; }
+  .further-history { margin-top: 0.6rem; page-break-inside: avoid; }
+  .further-role { grid-template-columns: 6rem 1fr; gap: 0.75rem; padding: 0.4rem 0; page-break-inside: avoid; }
+  .further-period { font-size: 8pt; }
+  .further-company { font-size: 10pt; margin-bottom: 0.05rem; }
+  .further-position { color: #333; }
+  .further-location { font-size: 8pt; margin-bottom: 0.2rem; }
+  .further-summary { font-size: 9pt; line-height: 1.35; color: #444; }
 }

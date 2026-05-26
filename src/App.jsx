@@ -5,6 +5,7 @@ import {
   about,
   skillCategories,
   experience,
+  furtherHistory,
   education,
   credentials,
   projects,
@@ -113,6 +114,8 @@ function Summary() {
 }
 
 function Experience() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section className="section" id="experience">
       <div className="section-label">02 — Experience</div>
@@ -142,6 +145,40 @@ function Experience() {
           </article>
         ))}
       </div>
+
+      {furtherHistory.length > 0 && (
+        <div className="further-history">
+          <button
+            className="further-toggle no-print"
+            onClick={() => setShowMore((s) => !s)}
+            aria-expanded={showMore}
+          >
+            <span className="further-toggle-rule" />
+            <span className="further-toggle-label">
+              {showMore ? 'Hide further history' : `Further history · ${furtherHistory.length} earlier roles`}
+            </span>
+            <span className="further-toggle-icon">{showMore ? '−' : '+'}</span>
+          </button>
+
+          <div className={`further-list ${showMore ? 'is-open' : ''}`}>
+            <div className="further-list-inner">
+              {furtherHistory.map((role, i) => (
+                <article key={`${role.company}-${i}`} className="further-role">
+                  <div className="further-period">{role.startDate} – {role.endDate}</div>
+                  <div className="further-body">
+                    <h4 className="further-company">
+                      {role.company}
+                      <span className="further-position"> · {role.position}</span>
+                    </h4>
+                    {role.location && <div className="further-location">{role.location}</div>}
+                    {role.summary && <p className="further-summary">{role.summary}</p>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

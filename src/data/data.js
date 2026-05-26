@@ -125,6 +125,13 @@ export const experience = [
   }
 ];
 
+// Further History — earlier roles, collapsed by default
+// Each entry: { company, position, location, startDate, endDate, summary }
+export const furtherHistory = [
+  // populate after pulling LinkedIn export, e.g.:
+  // { company: "...", position: "...", location: "...", startDate: "YYYY", endDate: "YYYY", summary: "..." }
+];
+
 // Education & Credentials
 export const education = [
   {
