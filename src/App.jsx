@@ -116,7 +116,7 @@ function Experience() {
   return (
     <section className="section" id="experience">
       <div className="section-label">02 — Experience</div>
-      <h2 className="section-title">Embedded with teams building platforms — and increasingly, the AI tooling around them.</h2>
+      <h2 className="section-title">A decade embedded with teams — platforms, security, and the AI tooling wrapping both.</h2>
       <div className="experience-list">
         {experience.map((role) => (
           <article key={role.company} className="role">
@@ -150,7 +150,7 @@ function Skills() {
   return (
     <section className="section" id="skills">
       <div className="section-label">03 — Capabilities</div>
-      <h2 className="section-title">Across cloud, security, platforms, and the languages that bind them.</h2>
+      <h2 className="section-title">Platform engineering, DevSecOps, and agentic AI — one practice, five surfaces.</h2>
       <div className="skills-grid">
         {skillCategories.map((cat) => (
           <div key={cat.name}>
@@ -171,7 +171,7 @@ function Projects() {
   return (
     <section className="section" id="projects">
       <div className="section-label">04 — Selected Projects</div>
-      <h2 className="section-title">A working portfolio of tools, agents, and platforms.</h2>
+      <h2 className="section-title">Things I built, mostly nights and weekends — agents, platforms, and the tooling around them.</h2>
       <div className="projects-grid">
         {projects.map((p) => (
           <article key={p.name} className="project">
