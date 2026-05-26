@@ -304,7 +304,7 @@ a:hover {
 .portrait-annotation {
   position: absolute;
   top: 88%;
-  left: -90px;
+  left: -20px;
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -417,12 +417,12 @@ a:hover {
 .section { position: relative; }
 
 /* Stats — squiggle sits ABOVE-LEFT of stats. Arrow=down-left so the
-   arrowhead lives at the lower-left of the SVG (which is the lower-left
-   of the squiggle box, with column-reverse + flex-start). Place that
-   corner just above "17yrs" at top-left of .stats. */
+   arrowhead lives at the lower-left of the SVG. Tuned by measuring tip
+   coords against "17yrs" — landed inside the text at -4.75rem; -7rem
+   places the tip just above the digits. */
 .stats { position: relative; overflow: visible; }
 .squiggle-stats {
-  top: -4.75rem;
+  top: -7rem;
   left: -0.75rem;
   width: 9rem;
 }
@@ -453,11 +453,11 @@ a:hover {
   font-size: 1.2rem;
 }
 
-/* Colophon — squiggle drops INTO the colophon's top padding so the arrow's
-   tip lands close to the message (colophon has ~80px top padding). */
+/* Colophon — squiggle drops further INTO the colophon's top padding so
+   the arrow's tip lands on the message text itself. */
 .colophon { position: relative; overflow: visible; }
 .squiggle-colophon {
-  top: -3rem;
+  top: -0.5rem;
   left: 0.5rem;
   width: 12rem;
 }
