@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './index.css';
 import {
   personalInfo,
@@ -12,6 +12,87 @@ import {
   contact,
   navigation,
 } from './data/data';
+
+function useInView(threshold = 0.25) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current || typeof IntersectionObserver === 'undefined') {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, inView];
+}
+
+const SQUIGGLE_ARROWS = {
+  'up-left': {
+    vb: '0 0 90 90',
+    curve: 'M76 78 C 72 50, 46 72, 40 46 C 32 24, 32 10, 18 14',
+    head: 'M24 8 L 18 14 L 26 20',
+  },
+  'up-right': {
+    vb: '0 0 90 90',
+    curve: 'M14 78 C 18 50, 44 72, 50 46 C 58 24, 58 10, 72 14',
+    head: 'M66 8 L 72 14 L 64 20',
+  },
+  left: {
+    vb: '0 0 110 50',
+    curve: 'M100 36 C 70 32, 60 12, 30 18 C 18 22, 14 22, 8 22',
+    head: 'M16 16 L 8 22 L 16 28',
+  },
+  up: {
+    vb: '0 0 70 100',
+    curve: 'M35 92 C 18 74, 50 56, 32 36 C 22 22, 30 14, 35 8',
+    head: 'M28 14 L 35 8 L 42 14',
+  },
+  down: {
+    vb: '0 0 70 100',
+    curve: 'M35 8 C 18 26, 50 44, 32 64 C 22 78, 30 86, 35 92',
+    head: 'M28 86 L 35 92 L 42 86',
+  },
+};
+
+function Squiggle({ children, className = '', arrow = 'up-left', rotation = -3 }) {
+  const [ref, inView] = useInView();
+  const p = SQUIGGLE_ARROWS[arrow] || SQUIGGLE_ARROWS['up-left'];
+
+  return (
+    <div
+      ref={ref}
+      className={`squiggle squiggle-${arrow} ${className} ${inView ? 'is-visible' : ''}`}
+      style={{ '--squiggle-rotate': `${rotation}deg` }}
+      aria-hidden="true"
+    >
+      <svg
+        className="squiggle-arrow"
+        viewBox={p.vb}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d={p.curve} />
+        <path d={p.head} />
+      </svg>
+      <span className="squiggle-text">{children}</span>
+    </div>
+  );
+}
 
 function useTheme() {
   const [theme, setTheme] = useState(() => {
@@ -124,6 +205,9 @@ function Summary() {
               <div className="stat-label">{s.label}</div>
             </div>
           ))}
+          <Squiggle className="squiggle-stats" arrow="up-left" rotation={5}>
+            really.<br />don't do<br />the math.
+          </Squiggle>
         </aside>
       </div>
     </section>
@@ -165,6 +249,9 @@ function Experience() {
 
       {furtherHistory.length > 0 && (
         <div className="further-history">
+          <Squiggle className="squiggle-further" arrow="up" rotation={-3}>
+            click. I have receipts.
+          </Squiggle>
           <button
             className="further-toggle no-print"
             onClick={() => setShowMore((s) => !s)}
@@ -205,6 +292,9 @@ function Skills() {
     <section className="section" id="skills">
       <div className="section-label">03 — Capabilities</div>
       <h2 className="section-title">Platform engineering, DevSecOps, and agentic AI — one practice, five surfaces.</h2>
+      <Squiggle className="squiggle-skills" arrow="left" rotation={-4}>
+        ok yes — buzzwords.<br />but I've actually used them.
+      </Squiggle>
       <div className="skills-grid">
         {skillCategories.map((cat) => (
           <div key={cat.name}>
@@ -283,6 +373,9 @@ function Education() {
 function Colophon() {
   return (
     <footer className="colophon no-print" id="contact">
+      <Squiggle className="squiggle-colophon" arrow="down" rotation={-5}>
+        you read this far? respect.
+      </Squiggle>
       <div className="colophon-message">
         Open to senior roles. <a href={`mailto:${contact.email}`}>Write me</a> if the work sounds like a fit.
       </div>

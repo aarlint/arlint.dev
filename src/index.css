@@ -344,6 +344,112 @@ a:hover {
   .portrait-annotation { display: none; }
 }
 
+/* =========================================================
+   Scroll-revealed squiggle annotations — fourth-wall asides
+   ========================================================= */
+
+.squiggle {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  pointer-events: none;
+  color: var(--accent-warm);
+  opacity: 0;
+  transform: translateY(10px) rotate(0deg);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.squiggle.is-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--squiggle-rotate, -3deg));
+}
+
+.squiggle-text {
+  font-family: 'Caveat', 'Caveat Brush', cursive;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.05;
+  color: var(--accent-warm);
+  white-space: normal;
+}
+
+.squiggle-arrow {
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+/* Layout per arrow direction */
+.squiggle-up-left,
+.squiggle-up-right {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.squiggle-up {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.squiggle-down {
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+.squiggle-left {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.squiggle-up-left .squiggle-arrow,
+.squiggle-up-right .squiggle-arrow { width: 78px; height: 78px; margin-bottom: -4px; }
+.squiggle-up .squiggle-arrow { width: 56px; height: 76px; margin-bottom: -2px; }
+.squiggle-down .squiggle-arrow { width: 56px; height: 76px; margin-top: -2px; }
+.squiggle-left .squiggle-arrow { width: 100px; height: 46px; }
+
+/* Per-location placement */
+
+/* Stats column — tucked into top-right of the stats card, arrow points up-left at "17yrs" */
+.stats { position: relative; }
+.squiggle-stats {
+  top: -2.5rem;
+  right: -3.5rem;
+  width: 9rem;
+}
+
+/* Skills section — arrow pulls leftward toward the section title */
+.section { position: relative; }
+.squiggle-skills {
+  top: -2.5rem;
+  right: 0;
+  width: 18rem;
+}
+
+/* Further history — sits between toggle and the list, arrow points up at the toggle */
+.further-history { position: relative; }
+.squiggle-further {
+  top: -3.5rem;
+  right: 12%;
+  width: 9rem;
+}
+
+/* Colophon — floats above the message, arrow points down at it */
+.colophon { position: relative; }
+.squiggle-colophon {
+  top: -4.5rem;
+  left: 1rem;
+  width: 12rem;
+}
+
+@media (max-width: 900px) {
+  .squiggle { display: none; }
+}
+
+@media print {
+  .squiggle { display: none !important; }
+}
+
 .masthead-eyebrow {
   font-family: var(--sans);
   font-size: 0.78rem;
