@@ -260,7 +260,7 @@ export const projects = [
 export const contact = {
   email: "austin@arlint.dev",
   location: "United States",
-  availability: "Open to forward-deployed, platform, and AI engineering roles — full-time, hourly contracts, or short-term engagements",
+  availability: "Open to forward-deployed, platform, and AI engineering roles — full-time or short-term engagements. Hourly rates available upon request.",
   socialLinks: {
     github: "https://github.com/aarlint",
     linkedin: "https://linkedin.com/in/austinarlint",
