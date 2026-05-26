@@ -113,14 +113,16 @@ export const experience = [
     location: "Remote",
     startDate: "2022",
     endDate: "Present",
-    description: "Leading DevSecOps initiatives and managing cloud infrastructure across multiple environments.",
+    description: "DevSecOps lead on CNAP, a zero-trust cloud-access platform deployed in AWS GovCloud for DoD mission partners. Architect security tooling, network intelligence pipelines, and compliance automation across Palo Alto firewalls, Appgate SDP, and Transit Gateway.",
     achievements: [
-      "Managed multiple Kubernetes clusters across various environments",
-      "Implemented comprehensive CI/CD pipelines",
-      "Optimized cloud infrastructure costs",
-      "Enhanced security posture through automated compliance checks"
+      "Built an executive network-intelligence report generator that correlates Palo Alto traffic, Appgate SDP tunnels, and Transit Gateway routing to quantify bypass vs. zero-trust posture per customer",
+      "Designed and operated multi-firewall border architecture with per-firewall reporting, customer-pattern matching, and CIDR-to-customer mapping driven from live AWS TGW route tables",
+      "Authored OpenSearch query pipelines (cnap_palo_traffic, cnap_appgate, cloudtrail-production) using AWS SigV4-signed access and assumed roles to support security investigations and audit evidence",
+      "Built STIG compliance tooling — interactive checklist server, state persistence, and evidence bundling — to accelerate RMF assessments for the platform",
+      "Operated Kubernetes (EKS) workloads, IaC with Terraform, and GitHub Actions CI/CD across dev, staging, and production GovCloud environments",
+      "Holds active Secret clearance and Security+ certification"
     ],
-    technologies: ["Kubernetes", "AWS", "Terraform", "Docker", "GitHub Actions"]
+    technologies: ["AWS GovCloud", "Palo Alto", "Appgate SDP", "OpenSearch", "Kubernetes", "Terraform", "Python", "STIG / RMF", "GitHub Actions"]
   },
   {
     company: "NTT",
