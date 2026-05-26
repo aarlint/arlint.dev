@@ -84,6 +84,23 @@ function Masthead() {
         {personalInfo.portrait && (
           <figure className="masthead-portrait">
             <img src={personalInfo.portrait} alt={`${personalInfo.name} portrait`} />
+            <div className="portrait-annotation no-print" aria-hidden="true">
+              <svg
+                className="portrait-arrow"
+                viewBox="0 0 120 110"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 100 C 4 78, 48 92, 38 60 C 30 32, 88 38, 78 14" />
+                <path d="M72 26 L 78 14 L 66 18" />
+              </svg>
+              <span className="portrait-annotation-text">
+                hair and mustache<br />not included
+              </span>
+            </div>
           </figure>
         )}
       </div>
