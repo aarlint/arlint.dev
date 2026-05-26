@@ -175,6 +175,7 @@ function Masthead() {
             </span>
             <span className="masthead-meta-item">{personalInfo.website}</span>
             <span className="masthead-meta-item">{personalInfo.clearance}</span>
+            <span className="masthead-meta-item">Hourly contracts open</span>
           </div>
         </div>
         {personalInfo.portrait && (
@@ -194,7 +195,7 @@ function Masthead() {
                 <path d="M72 26 L 78 14 L 66 18" />
               </svg>
               <span className="portrait-annotation-text">
-                hair and mustache<br />not included
+                hair and mustache:<br />free.99
               </span>
             </div>
           </figure>
@@ -392,7 +393,7 @@ function Colophon() {
         you read this far? respect.
       </Squiggle>
       <div className="colophon-message">
-        Open to senior roles. <a href={`mailto:${contact.email}`}>Write me</a> if the work sounds like a fit.
+        Open to senior roles or hourly contract work. <a href={`mailto:${contact.email}`}>Write me</a> if it sounds like a fit.
       </div>
       <div className="colophon-meta">
         <a href={`mailto:${contact.email}`}>{contact.email}</a>
