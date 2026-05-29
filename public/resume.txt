@@ -1,0 +1,286 @@
+AUSTIN ARLINT
+Forward Deployed Platform and AI Engineer
+
+Email:     austin@arlint.dev
+Website:   https://arlint.dev
+GitHub:    https://github.com/aarlint
+LinkedIn:  https://linkedin.com/in/austinarlint
+Location:  United States
+Clearance: Active Secret
+Availability: Open to senior roles - full-time or short-term engagements.
+              Hourly rates available upon request.
+
+================================================================================
+SUMMARY
+================================================================================
+
+Forward-deployed engineer and AI leader for federal Zero-Trust and DevSecOps
+work - embedded with teams, shipping the platforms, security tooling, and
+agentic AI that turn regulated work into something a small team can actually
+move.
+
+I work at the seam of three disciplines that have stopped being separate:
+
+- AI: I set direction and ship the engineering - MCP servers, RAG pipelines,
+  agent workflows, and the evaluation harness that anchors model behavior in
+  regulated environments, with a bias toward self-hosted and open-source
+  models that respect data boundaries.
+
+- DevSecOps: I run the network-intelligence and compliance backbone of a
+  Zero-Trust cloud-access platform for DoD mission partners - Palo Alto,
+  Appgate SDP, Transit Gateway, OpenSearch - with policy-as-code guardrails,
+  SBOM and supply-chain scanning, and STIG/RMF automation woven into CI/CD.
+
+- Platform: I build the paved roads underneath both - Kubernetes on EKS,
+  Terraform modules, GitOps pipelines, and developer-experience tooling that
+  turns ad-hoc operations into a product engineers can self-serve.
+
+17+ years shipping in tech. Production scale: AWS GovCloud. Active Secret
+clearance.
+
+
+================================================================================
+EXPERIENCE
+================================================================================
+
+------------------------------------------------------------
+SHE BASH LLC
+Chief AI Officer, Senior Software Engineer
+Remote | August 2025 - Present
+------------------------------------------------------------
+
+AI leader at a federal DevSecOps practice - set the firm's AI direction and
+ship the engineering work behind it. Focus on agentic systems that respect
+data boundaries, self-hosted and open-source models, and AI tooling that
+wraps the Zero-Trust and DevSecOps work the firm is already known for.
+
+- Set the firm's AI direction: opinionated on self-hosted and open-source
+  models, deterministic evaluations, and agent traces that survive an audit -
+  the AI strategy a regulated client can actually adopt.
+- Architect and ship the AI layer end-to-end - MCP servers, RAG pipelines
+  over operational and security corpora, and agent workflows that turn
+  DevSecOps telemetry into a conversational surface for engineers and
+  operators.
+- Build the platform underneath the AI: model gateways, evaluation harnesses,
+  agent observability, and developer-experience scaffolding that lets a small
+  team move fast without losing trust in what the model is doing.
+- Translate AI capability into the firm's existing practice areas -
+  Zero-Trust, ICAM, PKI, cloud-native infrastructure - so the AI work
+  compounds the security posture rather than fighting it.
+
+Technologies: Anthropic Claude API, Model Context Protocol (MCP),
+agent orchestration, retrieval-augmented generation (RAG), local LLMs,
+TypeScript, Python, evals.
+
+
+------------------------------------------------------------
+Raft
+Staff DevSecOps Engineer
+Remote | November 2023 - Present
+------------------------------------------------------------
+
+Staff engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud
+serving DoD mission partners. Own the network-intelligence layer, the
+paved-road platform engineers build on, and the AI-native tooling that's
+starting to wrap the whole thing.
+
+- Designed and shipped the executive network-intelligence pipeline that
+  fuses Palo Alto traffic, Appgate SDP zero-trust tunnels, and AWS Transit
+  Gateway routing - turning 460+ firewall rules and millions of log events
+  into per-customer markdown reports, Mermaid traffic-flow diagrams, and
+  audit-ready CSV evidence with a defensible Compliant to High-Risk
+  classification.
+- Operates the multi-firewall border architecture across regions:
+  per-firewall report folders, customer-pattern matching, and live
+  CIDR-to-customer mapping driven from AWS TGW route tables.
+- Built the OpenSearch query layer (cnap_palo_traffic, cnap_appgate,
+  cloudtrail-production) on AWS SigV4 + assumed roles, powering
+  investigations, dashboards, and continuous-control evidence.
+- Wove STIG/RMF compliance into CI/CD - SBOM generation, container
+  scanning, policy-as-code guardrails, evidence bundling, and an
+  interactive checklist server with SQLite state - so compliance falls out
+  of the build instead of living in a spreadsheet.
+- Operates the paved-road platform: EKS workloads, Terraform modules,
+  GitOps-driven deployment pipelines, secrets management, and
+  developer-experience tooling that lets feature teams self-serve
+  provisioning without leaving the compliance perimeter.
+- Building the AI-native layer: MCP servers and agent workflows that put
+  live telemetry, audit evidence, and runbook context one prompt away -
+  turning security operations into a conversational interface for the team.
+
+Technologies: AWS GovCloud, Palo Alto Networks, Appgate SDP, OpenSearch,
+EKS / Kubernetes, Terraform, GitOps, Policy-as-Code, STIG/RMF, MCP, Python.
+
+
+------------------------------------------------------------
+NTT
+Senior Software Engineer / Senior Developer
+Teltow, Germany then Missoula, MT (Remote) | April 2019 - December 2023
+------------------------------------------------------------
+
+Almost five years on NTT's in-house Automation Platform - a Kubernetes-native
+control plane that turned manual datacenter and cloud operations into a
+self-service product for engineering teams. Started in Berlin during the
+Dimension Data to NTT integration, finished remote from Montana.
+
+- Senior developer on the Automation Platform: a Kubernetes-native control
+  plane built on Rancher, Knative, Helm, and custom operators that turned
+  ad-hoc ops into golden paths internal teams could self-serve.
+- Owned the Django + Vue.js control surface engineers used daily - backend
+  APIs, feature work, and the operator-facing UX that made the platform feel
+  like a product, not a CLI.
+- Shipped deployment, configuration, and orchestration capabilities in
+  lockstep with the Kubernetes / Helm primitives underneath, including
+  custom operators where stock tooling fell short.
+- Bridged the Dimension Data to NTT acquisition: same product, same team,
+  new corporate plumbing - kept the platform moving through the integration.
+- Continued remotely from Montana after the EU to US transition, leading
+  platform work for North American teams.
+
+Technologies: Kubernetes, Rancher, Knative, Helm, Python, Django, Vue.js,
+Ansible.
+
+
+================================================================================
+FURTHER HISTORY
+================================================================================
+
+Dimension Data - DevOps Engineer L2
+Teltow, Germany | October 2016 - April 2019
+Built datacenter deployment and operations automation across a 1500+ server
+estate - Ansible playbooks, Jenkins pipelines, and custom Python/Vue/Node
+tooling, with PowerBI compliance auditing. Joined NTT via the 2019
+acquisition.
+
+Helpling - System Administrator
+Berlin, Germany | August 2015 - October 2016
+End-to-end systems for a fast-growing marketplace startup - Google
+Workspace, VoIP telephony, L2/L3 networking, Jira/Confluence, helpdesk,
+self-service wiki. First role in Germany.
+
+Control4 - System Administrator
+Draper, UT | August 2013 - July 2015
+Windows Server / Active Directory, Cisco networking, SharePoint, Office 365,
+and the VMware estate for a home-automation OEM. First job out of
+university.
+
+RR Donnelley - Programmer
+Logan, UT | October 2011 - February 2013
+Built and maintained custom software for high-value print and publishing
+projects - Perl, XML control files, in-house tooling.
+
+Goldman Sachs - New Analyst Intern
+Salt Lake City, UT | May 2011 - August 2011
+Summer analyst supporting four corporate sites - network patching, switch
+and router replacements, OS deployments via PXE, and custom tooling for
+technician workflow management.
+
+Space Dynamics Laboratory - Assistant Network Administrator
+Logan, UT | January 2009 - October 2011
+Software distribution, license auditing, and account management for a USU
+research lab - SCCM, SQL reporting, silent-installer engineering. First IT
+role, alongside undergrad.
+
+
+================================================================================
+SKILLS
+================================================================================
+
+Platform Engineering
+- Paved roads and golden paths, platform-as-a-product
+- Internal developer platforms (IDPs) and DevEx tooling
+- Kubernetes: EKS, Rancher, self-managed
+- Terraform modules, remote state, GovCloud providers
+- GitOps: ArgoCD, Flux, declarative delivery
+- OpenTelemetry, Grafana, Prometheus, CloudWatch
+- SRE practice: SLOs, runbooks, incident review
+
+DevSecOps and Zero Trust
+- Shift-left security in CI/CD pipelines
+- Supply-chain security: SBOM, signing, attestations
+- Policy-as-code: OPA / Rego, admission control
+- Container and image scanning: Trivy, runtime telemetry
+- Zero-trust network access: Appgate SDP, microsegmentation
+- Palo Alto Networks: Panorama, NGFW, App-ID, traffic analytics
+- STIG / RMF / DISA SCAP, continuous control monitoring
+- Secrets management, IAM least privilege, AWS SigV4
+
+AI and Agentic Systems
+- Anthropic Claude API, Claude Code, Claude Agent SDK
+- Model Context Protocol (MCP) server development
+- Agentic workflows and tool-use orchestration
+- Retrieval-augmented generation (RAG) pipelines, embeddings, vector search
+- Local LLMs: Ollama, Gemma, on-prem inference
+- Prompt engineering, evals, agent observability
+- Knowledge-graph construction over unstructured corpora
+
+Cloud Infrastructure
+- AWS: GovCloud and Commercial, multi-account / Organizations
+- AWS services: EC2, EKS, RDS, S3, Route 53, IAM, KMS, Lambda
+- AWS networking: Transit Gateway, VPC, Direct Connect, PrivateLink
+- Azure: AKS, App Services, Azure DevOps
+- OpenSearch / Elasticsearch: queries, dashboards, ingest
+- Ansible: playbooks, roles, dynamic inventory
+
+Languages and Build
+- Python: boto3, opensearch-py, data pipelines, automation
+- TypeScript / JavaScript: Node.js, React, Svelte, Vue
+- Go: CLI tools and services
+- Bash, PowerShell, shell-driven automation
+- SQL, SQLite, PostgreSQL
+- GitHub Actions, Jenkins, GitLab CI, Bun, Vite
+
+
+================================================================================
+SELECTED PROJECTS
+================================================================================
+
+Hours - https://github.com/aarlint/hours
+Native macOS time tracking and invoicing app with a Claude-native MCP
+server. Start/stop timers, generate PDF invoices, and manage clients,
+contracts, and quotes from a conversational interface.
+Stack: Swift, Node.js, MCP, SQLite, PDF.
+
+Hours MCP Server - https://github.com/aarlint/hours-mcp
+Standalone MCP server exposing 60+ tools for time tracking, billing cycles,
+invoice generation, and client management.
+Stack: TypeScript, MCP, Node.js.
+
+HomeGuard - https://github.com/aarlint/homeguard
+Self-hosted dashboard that ingests mirrored WhatsApp activity, runs local
+LLM summarization with Ollama/Gemma, surfaces concerning topics, and lets an
+investigator chat with a knowledge graph built from the corpus.
+Stack: Ollama, Gemma, Node.js, knowledge graph.
+
+Slack Impersonator - https://github.com/aarlint/slackimpersonator
+Slack bot that learns a user's voice from history and replies on their
+behalf. Vue admin UI with persona library, A/B experiments, draft approval
+flow, and MPIM polling.
+Stack: Vue, Node.js, Slack API, LLM.
+
+Trivy Glass - https://github.com/arlintdev/trivyglass
+Web UI that visualizes container vulnerabilities discovered by the Trivy
+Operator on Kubernetes clusters - real-time scanning, interactive
+dashboards, severity drilldowns.
+Stack: Svelte, Node.js, Kubernetes, Trivy.
+
+Switchboard - https://github.com/aarlint/switchboard
+Desktop client for browsing, searching, and managing transcripts from
+CLI-driven coding sessions across multiple projects.
+Stack: Electron, TypeScript, React.
+
+
+================================================================================
+EDUCATION
+================================================================================
+
+B.S. Information Systems Management
+Utah State University, Logan, UT | 2009 - 2013
+
+
+================================================================================
+CREDENTIALS
+================================================================================
+
+CompTIA Security+      (Active)
+Secret Security Clearance (Active)

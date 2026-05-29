@@ -339,7 +339,7 @@ function Projects() {
               <h3 className="project-name">{p.name}</h3>
               {p.github && (
                 <a className="project-link" href={p.github} target="_blank" rel="noreferrer">
-                  Source ↗
+                  Source<span className="no-print" aria-hidden="true"> ↗</span>
                 </a>
               )}
             </header>

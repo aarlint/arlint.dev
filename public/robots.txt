@@ -1,0 +1,51 @@
+# Personal site / résumé — public, indexable, AI-readable
+# Sitemap: https://arlint.dev/sitemap.xml
+
+User-agent: *
+Allow: /
+
+# Explicit allow for major search + AI crawlers so signals like the
+# plain-text companion résumé at /resume.txt are picked up reliably.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl — feeds most foundation-model training corpora
+User-agent: CCBot
+Allow: /
