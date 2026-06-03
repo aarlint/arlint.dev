@@ -121,7 +121,21 @@ export const experience = [
       "Operates the paved-road platform: EKS workloads, Terraform modules, GitOps-driven deployment pipelines, secrets management, and developer-experience tooling that lets feature teams self-serve provisioning without leaving the compliance perimeter",
       "Building the AI-native layer: MCP servers and agent workflows that put live telemetry, audit evidence, and runbook context one prompt away — turning security operations into a conversational interface for the team"
     ],
-    technologies: ["AWS GovCloud", "Palo Alto", "Appgate SDP", "OpenSearch", "EKS / Kubernetes", "Terraform", "GitOps", "Policy-as-Code", "STIG / RMF", "MCP", "Python"]
+    technologies: ["AWS GovCloud", "Palo Alto", "Appgate SDP", "OpenSearch", "EKS / Kubernetes", "Terraform", "GitOps", "Policy-as-Code", "STIG / RMF", "MCP", "Python"],
+    // The Circle — colleagues from this role.
+    // Schema: name, relationship, note (optional cross-employer clarification),
+    // blurb, link (optional). Untraditional, but more honest than a skills list.
+    circle: [
+      {
+        name: "Patrick Joyce",
+        relationship: "AWS sherpa · CNAP wingman",
+        note: "Same government program (CNAP), different employer",
+        blurb: "Will tell you he just guessed the answer, then explain exactly which subnet your VPC endpoint should be in. Taught me firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. Once killed the prod EKS management cluster on a quiet afternoon and saved the government ~$10k a month — nobody noticed because nobody needed it. The teammate I should listen to more often.",
+        link: null,
+      },
+    ],
+    circleNote: "For the unfiltered CNAP roster (beards, hot dogs, Costco runs, and all), see",
+    circleNoteLink: "https://cnapmisfits.arlint.dev",
   },
   {
     company: "NTT",
@@ -267,25 +281,6 @@ export const contact = {
     twitter: "https://twitter.com/austinarlint"
   }
 };
-
-// The Circle — colleagues who shaped the work.
-// Untraditional for a resume, more honest than a skills list.
-//
-// Schema:
-//   name         — full name
-//   relationship — short italic label (1 line, role + dynamic)
-//   context      — where we worked together (small caption)
-//   blurb        — 2–4 sentence prose, capture the friendship + craft
-//   link         — optional URL (LinkedIn / personal site / GitHub)
-export const circle = [
-  {
-    name: "Patrick Joyce",
-    relationship: "AWS sherpa · CNAP wingman",
-    context: "CNAP — Cloud Native Access Point · Palo Alto + Appgate zero-trust (same government program, different employer)",
-    blurb: "Will tell you he just guessed the answer, then explain exactly which subnet your VPC endpoint should be in. Taught me firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. Once killed the prod EKS management cluster on a quiet afternoon and saved the government ~$10k a month — nobody noticed because nobody needed it. The teammate I should listen to more often.",
-    link: null,
-  },
-];
 
 // Navigation
 export const navigation = [

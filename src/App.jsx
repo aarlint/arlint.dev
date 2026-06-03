@@ -11,7 +11,6 @@ import {
   projects,
   contact,
   navigation,
-  circle,
 } from './data/data';
 
 function useInView(threshold = 0.25) {
@@ -125,7 +124,7 @@ function useTheme() {
   return [theme, () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))];
 }
 
-function Topbar({ onOpenCircle }) {
+function Topbar() {
   const [theme, toggleTheme] = useTheme();
 
   return (
@@ -138,13 +137,6 @@ function Topbar({ onOpenCircle }) {
           ))}
         </nav>
         <div className="topbar-actions">
-          <button
-            className="btn-circle"
-            onClick={onOpenCircle}
-            aria-label="Open the circle — colleagues I've worked with"
-          >
-            Circle
-          </button>
           <button
             className="icon-btn"
             onClick={toggleTheme}
@@ -166,81 +158,61 @@ function Topbar({ onOpenCircle }) {
   );
 }
 
-function CircleDrawer({ open, onClose }) {
-  // Close on Escape, lock body scroll while open
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [open, onClose]);
+function RoleCircle({ people, note, noteLink }) {
+  const [open, setOpen] = useState(false);
+  if (!people || people.length === 0) return null;
+  const count = people.length;
+  const label = `${count} ${count === 1 ? 'colleague' : 'colleagues'}`;
 
   return (
-    <>
-      <div
-        className={`circle-backdrop no-print ${open ? 'is-open' : ''}`}
-        onClick={onClose}
-        aria-hidden="true"
-      />
-      <aside
-        className={`circle-drawer no-print ${open ? 'is-open' : ''}`}
-        aria-hidden={!open}
-        aria-label="Circle — colleagues I've worked with"
-        role="dialog"
+    <div className="role-circle">
+      <button
+        className="role-circle-toggle no-print"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
       >
-        <div className="circle-inner">
-          <header className="circle-header">
-            <div className="section-label">06 — The Circle</div>
-            <button
-              className="icon-btn circle-close"
-              onClick={onClose}
-              aria-label="Close circle"
-            >
-              ×
-            </button>
-          </header>
+        <span className="role-circle-rule" />
+        <span className="role-circle-label">
+          {open ? 'Hide the circle' : `The circle · ${label}`}
+        </span>
+        <span className="role-circle-icon">{open ? '−' : '+'}</span>
+      </button>
 
-          <h2 className="circle-title">The people who made the work possible.</h2>
-          <p className="circle-intro">
-            Untraditional — but more honest than a list of skills. These are the colleagues
-            who taught me, debugged with me at 3 AM, and shipped the hard parts alongside me.
-          </p>
-
-          <ul className="circle-list">
-            {circle.map((p) => (
-              <li key={p.name} className="circle-person">
-                <h3 className="circle-name">{p.name}</h3>
+      <div className={`role-circle-panel ${open ? 'is-open' : ''}`}>
+        <div className="role-circle-panel-inner">
+          {people.map((p) => (
+            <article key={p.name} className="role-circle-person">
+              <h4 className="role-circle-name">
+                {p.name}
                 {p.relationship && (
-                  <div className="circle-relationship">{p.relationship}</div>
+                  <span className="role-circle-relationship"> — {p.relationship}</span>
                 )}
-                {p.context && (
-                  <div className="circle-context">{p.context}</div>
-                )}
-                <p className="circle-blurb">{p.blurb}</p>
-                {p.link && (
-                  <a className="circle-link" href={p.link} target="_blank" rel="noreferrer">
-                    Hello {p.name.split(' ')[0]} ↗
+              </h4>
+              {p.note && <div className="role-circle-note">{p.note}</div>}
+              <p className="role-circle-blurb">{p.blurb}</p>
+              {p.link && (
+                <a className="role-circle-link" href={p.link} target="_blank" rel="noreferrer">
+                  Hello {p.name.split(' ')[0]} ↗
+                </a>
+              )}
+            </article>
+          ))}
+          {note && (
+            <div className="role-circle-footer">
+              {note}
+              {noteLink && (
+                <>
+                  {' '}
+                  <a href={noteLink} target="_blank" rel="noreferrer">
+                    {noteLink.replace(/^https?:\/\//, '')}
                   </a>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <div className="circle-footer">
-            More to come — this list is a living one.
-            {' '}For the unfiltered roster (beards, hot dogs, Costco runs, and all), see{' '}
-            <a href="https://cnapmisfits.arlint.dev" target="_blank" rel="noreferrer">
-              cnapmisfits.arlint.dev
-            </a>.
-          </div>
+                </>
+              )}
+            </div>
+          )}
         </div>
-      </aside>
-    </>
+      </div>
+    </div>
   );
 }
 
@@ -344,6 +316,13 @@ function Experience() {
                   <span key={t} className="role-tag">{t}</span>
                 ))}
               </div>
+              {role.circle && role.circle.length > 0 && (
+                <RoleCircle
+                  people={role.circle}
+                  note={role.circleNote}
+                  noteLink={role.circleNoteLink}
+                />
+              )}
             </div>
           </article>
         ))}
@@ -492,25 +471,20 @@ function Colophon() {
 }
 
 export default function App() {
-  const [circleOpen, setCircleOpen] = useState(false);
-
   return (
     <>
-      <div className={`app-frame ${circleOpen ? 'is-shifted' : ''}`}>
-        <Topbar onOpenCircle={() => setCircleOpen(true)} />
-        <main className="page">
-          <Masthead />
-          <Summary />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Education />
-        </main>
-        <div className="page">
-          <Colophon />
-        </div>
+      <Topbar />
+      <main className="page">
+        <Masthead />
+        <Summary />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+      </main>
+      <div className="page">
+        <Colophon />
       </div>
-      <CircleDrawer open={circleOpen} onClose={() => setCircleOpen(false)} />
     </>
   );
 }
