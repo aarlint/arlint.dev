@@ -1429,7 +1429,17 @@ a:hover {
   font-style: italic;
   font-size: 0.98rem;
   color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.circle-context {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .circle-blurb {

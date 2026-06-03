@@ -218,6 +218,9 @@ function CircleDrawer({ open, onClose }) {
                 {p.relationship && (
                   <div className="circle-relationship">{p.relationship}</div>
                 )}
+                {p.context && (
+                  <div className="circle-context">{p.context}</div>
+                )}
                 <p className="circle-blurb">{p.blurb}</p>
                 {p.link && (
                   <a className="circle-link" href={p.link} target="_blank" rel="noreferrer">

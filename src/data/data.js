@@ -270,10 +270,18 @@ export const contact = {
 
 // The Circle — colleagues who shaped the work.
 // Untraditional for a resume, more honest than a skills list.
+//
+// Schema:
+//   name         — full name
+//   relationship — short italic label (1 line, role + dynamic)
+//   context      — where we worked together (small caption)
+//   blurb        — 2–4 sentence prose, capture the friendship + craft
+//   link         — optional URL (LinkedIn / personal site / GitHub)
 export const circle = [
   {
     name: "Patrick Joyce",
     relationship: "AWS sherpa · CNAP wingman",
+    context: "Raft · CNAP (Cloud Native Access Point) — Palo Alto + Appgate zero-trust",
     blurb: "Will tell you he just guessed the answer, then proceed to explain exactly which subnet your VPC endpoint should be in. Introduced me to firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. The teammate I should listen to more often — and now, having said that out loud, hopefully will.",
     link: null,
   },
