@@ -281,8 +281,8 @@ export const circle = [
   {
     name: "Patrick Joyce",
     relationship: "AWS sherpa · CNAP wingman",
-    context: "Raft · CNAP (Cloud Native Access Point) — Palo Alto + Appgate zero-trust",
-    blurb: "Will tell you he just guessed the answer, then explain exactly which subnet your VPC endpoint should be in. Taught me firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. Once killed the prod EKS management cluster on a quiet afternoon and saved Raft ~$10k a month — nobody noticed because nobody needed it. The teammate I should listen to more often.",
+    context: "CNAP — Cloud Native Access Point · Palo Alto + Appgate zero-trust (same government program, different employer)",
+    blurb: "Will tell you he just guessed the answer, then explain exactly which subnet your VPC endpoint should be in. Taught me firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. Once killed the prod EKS management cluster on a quiet afternoon and saved the government ~$10k a month — nobody noticed because nobody needed it. The teammate I should listen to more often.",
     link: null,
   },
 ];
