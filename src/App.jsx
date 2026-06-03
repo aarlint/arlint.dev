@@ -233,6 +233,10 @@ function CircleDrawer({ open, onClose }) {
 
           <div className="circle-footer">
             More to come — this list is a living one.
+            {' '}For the unfiltered roster (beards, hot dogs, Costco runs, and all), see{' '}
+            <a href="https://cnapmisfits.arlint.dev" target="_blank" rel="noreferrer">
+              cnapmisfits.arlint.dev
+            </a>.
           </div>
         </div>
       </aside>
