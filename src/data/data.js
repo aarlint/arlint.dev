@@ -268,6 +268,17 @@ export const contact = {
   }
 };
 
+// The Circle — colleagues who shaped the work.
+// Untraditional for a resume, more honest than a skills list.
+export const circle = [
+  {
+    name: "Patrick Joyce",
+    relationship: "AWS sherpa · CNAP wingman",
+    blurb: "Will tell you he just guessed the answer, then proceed to explain exactly which subnet your VPC endpoint should be in. Introduced me to firelens, fluentbit-on-ECS, and the discipline of using FQDNs instead of IPs that change monthly. The teammate I should listen to more often — and now, having said that out loud, hopefully will.",
+    link: null,
+  },
+];
+
 // Navigation
 export const navigation = [
   { id: "summary", label: "Summary" },

@@ -11,6 +11,7 @@ import {
   projects,
   contact,
   navigation,
+  circle,
 } from './data/data';
 
 function useInView(threshold = 0.25) {
@@ -124,7 +125,7 @@ function useTheme() {
   return [theme, () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))];
 }
 
-function Topbar() {
+function Topbar({ onOpenCircle }) {
   const [theme, toggleTheme] = useTheme();
 
   return (
@@ -137,6 +138,13 @@ function Topbar() {
           ))}
         </nav>
         <div className="topbar-actions">
+          <button
+            className="btn-circle"
+            onClick={onOpenCircle}
+            aria-label="Open the circle — colleagues I've worked with"
+          >
+            Circle
+          </button>
           <button
             className="icon-btn"
             onClick={toggleTheme}
@@ -155,6 +163,77 @@ function Topbar() {
         </div>
       </div>
     </header>
+  );
+}
+
+function CircleDrawer({ open, onClose }) {
+  // Close on Escape, lock body scroll while open
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open, onClose]);
+
+  return (
+    <>
+      <div
+        className={`circle-backdrop no-print ${open ? 'is-open' : ''}`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      <aside
+        className={`circle-drawer no-print ${open ? 'is-open' : ''}`}
+        aria-hidden={!open}
+        aria-label="Circle — colleagues I've worked with"
+        role="dialog"
+      >
+        <div className="circle-inner">
+          <header className="circle-header">
+            <div className="section-label">06 — The Circle</div>
+            <button
+              className="icon-btn circle-close"
+              onClick={onClose}
+              aria-label="Close circle"
+            >
+              ×
+            </button>
+          </header>
+
+          <h2 className="circle-title">The people who made the work possible.</h2>
+          <p className="circle-intro">
+            Untraditional — but more honest than a list of skills. These are the colleagues
+            who taught me, debugged with me at 3 AM, and shipped the hard parts alongside me.
+          </p>
+
+          <ul className="circle-list">
+            {circle.map((p) => (
+              <li key={p.name} className="circle-person">
+                <h3 className="circle-name">{p.name}</h3>
+                {p.relationship && (
+                  <div className="circle-relationship">{p.relationship}</div>
+                )}
+                <p className="circle-blurb">{p.blurb}</p>
+                {p.link && (
+                  <a className="circle-link" href={p.link} target="_blank" rel="noreferrer">
+                    Hello {p.name.split(' ')[0]} ↗
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <div className="circle-footer">
+            More to come — this list is a living one.
+          </div>
+        </div>
+      </aside>
+    </>
   );
 }
 
@@ -406,20 +485,25 @@ function Colophon() {
 }
 
 export default function App() {
+  const [circleOpen, setCircleOpen] = useState(false);
+
   return (
     <>
-      <Topbar />
-      <main className="page">
-        <Masthead />
-        <Summary />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Education />
-      </main>
-      <div className="page">
-        <Colophon />
+      <div className={`app-frame ${circleOpen ? 'is-shifted' : ''}`}>
+        <Topbar onOpenCircle={() => setCircleOpen(true)} />
+        <main className="page">
+          <Masthead />
+          <Summary />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Education />
+        </main>
+        <div className="page">
+          <Colophon />
+        </div>
       </div>
+      <CircleDrawer open={circleOpen} onClose={() => setCircleOpen(false)} />
     </>
   );
 }
