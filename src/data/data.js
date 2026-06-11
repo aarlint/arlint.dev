@@ -108,11 +108,11 @@ export const experience = [
   },
   {
     company: "Raft",
-    position: "Staff DevSecOps Engineer",
+    position: "Senior DevSecOps Engineer",
     location: "Remote",
     startDate: "Nov 2023",
     endDate: "Present",
-    summary: "Staff engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud serving DoD mission partners. Own the network-intelligence layer, the paved-road platform engineers build on, and the AI-native tooling that's starting to wrap the whole thing.",
+    summary: "Senior engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud serving DoD mission partners. Own the network-intelligence layer, the paved-road platform engineers build on, and the AI-native tooling that's starting to wrap the whole thing.",
     achievements: [
       "Designed and shipped the executive network-intelligence pipeline that fuses Palo Alto traffic, Appgate SDP zero-trust tunnels, and AWS Transit Gateway routing — turning 460+ firewall rules and millions of log events into per-customer markdown reports, Mermaid traffic-flow diagrams, and audit-ready CSV evidence with a defensible Compliant → High-Risk classification",
       "Operates the multi-firewall border architecture across regions: per-firewall report folders, customer-pattern matching, and live CIDR-to-customer mapping driven from AWS TGW route tables",

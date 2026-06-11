@@ -75,11 +75,11 @@ TypeScript, Python, evals.
 
 ------------------------------------------------------------
 Raft
-Staff DevSecOps Engineer
+Senior DevSecOps Engineer
 Remote | November 2023 - Present
 ------------------------------------------------------------
 
-Staff engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud
+Senior engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud
 serving DoD mission partners. Own the network-intelligence layer, the
 paved-road platform engineers build on, and the AI-native tooling that's
 starting to wrap the whole thing.
