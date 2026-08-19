@@ -1202,8 +1202,11 @@ a:hover {
   .section {
     padding: 0.7rem 0;
     border-top: 0.5pt solid var(--hairline);
-    page-break-inside: avoid;
+    page-break-inside: auto;
   }
+
+  /* Keep headings attached to the content that follows them */
+  .section-label, .section-title { page-break-after: avoid; }
 
   .section-label { font-size: 7.5pt; margin-bottom: 0.5rem; letter-spacing: 0.18em; }
   .section-title { font-size: 14pt; margin-bottom: 0.6rem; }
@@ -1218,7 +1221,11 @@ a:hover {
   .stat-label { font-size: 7.5pt; color: #444; }
 
   .experience-list { gap: 0.9rem; }
-  .role { grid-template-columns: 8rem 1fr; gap: 1.25rem; page-break-inside: avoid; }
+  .role { grid-template-columns: 8rem 1fr; gap: 1.25rem; page-break-inside: auto; }
+  .role-company, .role-position { page-break-after: avoid; }
+  .role-summary { page-break-inside: avoid; }
+  .role-bullets li { page-break-inside: avoid; }
+  .role-tags { page-break-inside: avoid; }
   .role-meta { font-size: 8.5pt; }
   .role-period { font-size: 8pt; margin-bottom: 0.25rem; }
   .role-company { font-size: 13pt; margin-bottom: 0.1rem; }
@@ -1253,6 +1260,7 @@ a:hover {
   .cred-status { font-size: 7.5pt; color: #111; }
 
   .colophon { display: none; }
+  .role-circle { display: none !important; }
 
   a { border-bottom: none; color: inherit; }
 
