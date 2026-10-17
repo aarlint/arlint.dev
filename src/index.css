@@ -1,5 +1,5 @@
 /* =========================================================
-   Editorial Resume — Austin Arlint
+   Arlint Dev LLC — company site + Austin Arlint profile
    Paper-feel typography, generous whitespace, hairline rules.
    Light + dark modes. Print-optimized for one-click PDF.
    Fonts are loaded via <link> in index.html (preconnect + parallel)
@@ -185,8 +185,24 @@ a:hover {
 
 .topbar-nav a:hover { color: var(--ink); }
 
+.topbar-nav a[aria-current='page'] {
+  color: var(--ink);
+  box-shadow: 0 2px 0 var(--accent);
+}
+
 @media (max-width: 720px) {
-  .topbar-nav { display: none; }
+  .topbar-inner {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    padding: 0.75rem 16px;
+  }
+  .topbar-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.25rem;
+  }
 }
 
 .topbar-actions {
@@ -1439,3 +1455,400 @@ a:hover {
   .role-circle-blurb { font-size: 9pt; line-height: 1.4; color: #333; }
   .role-circle-footer { font-size: 8.5pt; padding-top: 0.4rem; color: #555; }
 }
+
+/* =========================================================
+   Company pages — hero, offers, features, federal facts
+   ========================================================= */
+
+@media (max-width: 720px) {
+  .page { padding-left: 16px; padding-right: 16px; }
+}
+
+.hero { padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(3rem, 6vw, 5rem); }
+
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-variation-settings: 'opsz' 144;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.hero-lead {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 40ch;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-faint);
+  max-width: 60ch;
+  margin-bottom: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  color: var(--paper);
+  border-color: var(--ink);
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Offers: product + consulting */
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .offer-grid { grid-template-columns: 1fr; }
+}
+
+.offer {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: color-mix(in srgb, var(--paper-warm) 60%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.offer-product { border-top: 3px solid var(--accent); }
+
+.offer-kicker {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.offer-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.offer-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.offer-soft { color: var(--ink-soft); font-size: 0.95rem; }
+
+.offer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.offer-list strong { color: var(--ink); font-weight: 600; }
+
+.offer-links {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* Feature grid */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 0;
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+
+.feature {
+  padding: 1.5rem;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.feature-name {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Split: heading left, body right */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .split { grid-template-columns: 1fr; }
+}
+
+.split .section-title { margin-bottom: 0; }
+
+.split-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: var(--measure);
+}
+
+.split-body a { color: var(--accent); }
+
+/* Federal facts + registration card */
+
+.federal-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .federal-grid { grid-template-columns: 1fr; }
+}
+
+.fact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.fact-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.fact-list li:first-child { border-top: 1px solid var(--hairline); }
+
+.fact-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 1.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.federal-card {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 1.5rem;
+  font-family: var(--sans);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: color-mix(in srgb, var(--paper-warm) 60%, transparent);
+}
+
+.federal-card-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.federal-card-line {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.federal-card-mail {
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.company-ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.company-id { display: flex; gap: 0.5rem; }
+.company-id dt { color: var(--ink-faint); }
+.company-id dd { color: var(--ink); }
+
+/* Where it stands */
+
+.standing {
+  max-width: 52rem;
+  border-left: 3px solid var(--accent-warm);
+  padding-left: clamp(1rem, 3vw, 2rem);
+}
+
+.standing-note {
+  margin-top: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* Contact block */
+
+.contact-message {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.35;
+  max-width: 30ch;
+  overflow-wrap: anywhere;
+}
+
+.contact-message a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* Site footer */
+
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 3rem) 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.site-footer-inner,
+.site-footer-sig {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+@media (max-width: 720px) {
+  .site-footer-inner,
+  .site-footer-sig { padding: 0 16px; }
+}
+
+.site-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-footer-company {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.site-footer-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.site-footer-mail { align-self: flex-start; color: var(--ink); }
+
+.company-ids-inline { margin-top: 0.4rem; font-size: 0.78rem; }
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: flex-start;
+}
+
+.site-footer-links a { border-bottom: none; color: var(--ink-soft); }
+.site-footer-links a:hover { color: var(--accent); }
+
+.site-footer-sig {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+@media print {
+  .site-footer { display: none !important; }
+}
+
+.colophon-message { overflow-wrap: anywhere; }

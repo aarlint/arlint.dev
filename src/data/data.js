@@ -26,6 +26,70 @@ export const about = {
   ]
 };
 
+// Company — Arlint Dev LLC
+// uei and duns render only when set; never show a placeholder.
+export const company = {
+  name: "Arlint Dev LLC",
+  shortName: "Arlint Dev",
+  kind: "Montana limited liability company",
+  formed: "October 2025",
+  location: "Missoula, Montana",
+  email: "info@arlint.dev",
+  uei: "CZF9JNB1SFM6",
+  duns: "14-047-7935",
+  status: ["Small business", "SAM.gov registered", "Missoula, Montana"],
+  oneLiner: "We build Digin, self-hostable collaboration software for organizations that work with CUI, and consult on platform engineering, DevSecOps, zero trust, and agentic AI for regulated and federal work.",
+  demoMailto: "mailto:info@arlint.dev?subject=Digin%20demo%20or%20pilot%20request",
+  consultingMailto: "mailto:info@arlint.dev?subject=Consulting%20inquiry",
+  consulting: [
+    {
+      name: "Platform engineering",
+      body: "Paved-road platforms on Kubernetes and Terraform, GitOps delivery, and the developer tooling that lets teams self-serve inside the compliance boundary."
+    },
+    {
+      name: "DevSecOps",
+      body: "Security and compliance in the pipeline: SBOMs, scanning, policy as code, and STIG/RMF evidence produced by the build rather than by hand."
+    },
+    {
+      name: "Zero trust",
+      body: "Zero-trust network access, segmentation, and traffic intelligence, drawn from work on a DoD zero-trust cloud-access platform in AWS GovCloud."
+    },
+    {
+      name: "Agentic AI",
+      body: "MCP servers, RAG pipelines, and agent workflows for regulated environments, with a bias toward self-hosted models that keep data where it belongs."
+    }
+  ]
+};
+
+// Digin — the product. Say "designed for", never "authorized" or "compliant".
+export const digin = {
+  name: "Digin",
+  url: "https://digin.work",
+  urlLabel: "digin.work",
+  lead: "Chat, issues, pages, meetings, and AI bots in one self-hosted application, for organizations that work with CUI.",
+  replaces: "A self-hostable replacement for Slack, Linear or Jira, and Notion or Confluence.",
+  runs: "One Go binary with the web app embedded, on PostgreSQL. It runs on-premises or in your own cloud.",
+  features: [
+    { name: "Chat and channels", body: "Conversations and channels for the whole organization, on your own servers." },
+    { name: "Issues and projects", body: "Track work in projects and issues alongside the conversations about it." },
+    { name: "Pages and docs", body: "Write and keep documentation and pages next to the work they describe." },
+    { name: "Meetings and calls", body: "Hold meetings and calls inside the same application." },
+    { name: "AI bots", body: "AI bots that work inside the workspace with the people using it." },
+    { name: "CUI markings", body: "Markings and banners on content. Channels, issues, and pages carry markings, and notifications hold marked content back." },
+    { name: "FIPS 140-3 cryptography", body: "A FIPS 140-3 build on the Go Cryptographic Module (CMVP #5247)." },
+    { name: "Audit", body: "Every request is authenticated and audited, into a hash-chained, anchored audit log." },
+    { name: "Assessment material", body: "Ships an OSCAL component definition and a control mapping, built to support a FISMA Moderate authorization." },
+    { name: "Zero-trust native apps", body: "App-embedded zero trust for IL4: phones enroll as attested, hardware-bound devices with QR approval from the web, get 10-minute device-bound tokens, and are revoked and wiped from the server, with mutual TLS for IL4 deployments." },
+    { name: "Your infrastructure", body: "One Go binary with the web app embedded, on PostgreSQL, on-premises or in your own cloud." }
+  ],
+  standing: [
+    "Designed for a FISMA Moderate authorization, and built to support one with an OSCAL component definition and a control mapping.",
+    "Designed for IL4 deployments, with app-embedded zero trust and mutual TLS for native apps.",
+    "Piloted with SHE BASH LLC, a DoD contracting company."
+  ],
+  standingNote: "These describe how Digin is designed and built. An authorization is granted to a deployment by its authorizing official; Digin is built to support one."
+};
+
 // Skills — categorized for editorial layout
 export const skillCategories = [
   {
@@ -92,6 +156,23 @@ export const skillCategories = [
 // Experience — featured roles
 export const experience = [
   {
+    company: "Arlint Dev LLC",
+    position: "Founder & Principal Engineer",
+    location: "Missoula, MT / Remote",
+    startDate: "Oct 2025",
+    endDate: "Present",
+    summary: "Founded Arlint Dev LLC, a Montana small business registered in SAM.gov, to build Digin and to consult on platform engineering, DevSecOps, zero trust, and agentic AI for regulated and federal work.",
+    achievements: [
+      "Building Digin — a self-hostable replacement for Slack, Linear/Jira, and Notion/Confluence for organizations working with CUI: chat and channels, issues and projects, pages and docs, meetings and calls, and AI bots",
+      "Ship Digin as one Go binary with the web app embedded, on PostgreSQL, running on-premises or in the customer's own cloud, with a FIPS 140-3 build on the Go Cryptographic Module (CMVP #5247)",
+      "Designed Digin for a FISMA Moderate authorization: an OSCAL component definition and control mapping, every request authenticated and audited, and a hash-chained, anchored audit log",
+      "Built CUI markings into the product — banners and markings on channels, issues, and pages, with notifications holding marked content back — and app-embedded zero trust for native apps: attested, hardware-bound device enrollment, 10-minute device-bound tokens, remote revoke and wipe, and mutual TLS for IL4 deployments",
+      "Piloting Digin with SHE BASH LLC, a DoD contracting company",
+      "Consult on platform engineering, DevSecOps, zero trust, and agentic AI for regulated and federal teams"
+    ],
+    technologies: ["Go", "PostgreSQL", "FIPS 140-3", "OSCAL", "Zero Trust", "mTLS", "AI agents"]
+  },
+  {
     company: "SHE BASH LLC",
     position: "Chief AI Officer · Senior Software Engineer",
     location: "Remote",
@@ -111,7 +192,7 @@ export const experience = [
     position: "Senior DevSecOps Engineer",
     location: "Remote",
     startDate: "Nov 2023",
-    endDate: "Present",
+    endDate: "Oct 2026",
     summary: "Senior engineer on CNAP, a zero-trust cloud-access platform in AWS GovCloud serving DoD mission partners. Own the network-intelligence layer, the paved-road platform engineers build on, and the AI-native tooling that's starting to wrap the whole thing.",
     achievements: [
       "Designed and shipped the executive network-intelligence pipeline that fuses Palo Alto traffic, Appgate SDP zero-trust tunnels, and AWS Transit Gateway routing — turning 460+ firewall rules and millions of log events into per-customer markdown reports, Mermaid traffic-flow diagrams, and audit-ready CSV evidence with a defensible Compliant → High-Risk classification",
