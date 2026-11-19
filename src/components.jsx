@@ -4,6 +4,7 @@ import { company } from './data/data';
 export function CompanyIds({ className = '' }) {
   const ids = [
     company.uei && { label: 'UEI', value: company.uei },
+    company.cage && { label: 'CAGE', value: company.cage },
     company.duns && { label: 'D-U-N-S', value: company.duns },
   ].filter(Boolean);
   if (ids.length === 0) return null;

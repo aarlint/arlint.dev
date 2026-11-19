@@ -30,7 +30,7 @@ export default function Company() {
               Automation Platform, after joining Dimension Data in Germany, and then worked as a
               senior DevSecOps engineer at Raft on CNAP, a zero-trust cloud-access platform in AWS
               GovCloud serving DoD mission partners. Since August 2025 he has also been Chief AI
-              Officer at SHE BASH LLC, a DoD contracting company, where Digin is being piloted.
+              Officer at SHE BASH LLC, a DoD contracting company, where Digin is in production use.
             </p>
             <p>
               He holds a B.S. in Information Systems Management from Utah State University, CompTIA

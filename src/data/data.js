@@ -27,7 +27,7 @@ export const about = {
 };
 
 // Company — Arlint Dev LLC
-// uei and duns render only when set; never show a placeholder.
+// uei, cage and duns render only when set; never show a placeholder.
 export const company = {
   name: "Arlint Dev LLC",
   shortName: "Arlint Dev",
@@ -36,6 +36,7 @@ export const company = {
   location: "Missoula, Montana",
   email: "info@arlint.dev",
   uei: "CZF9JNB1SFM6",
+  cage: "27HY9",
   duns: "14-047-7935",
   status: ["Small business", "SAM.gov registered", "Missoula, Montana"],
   oneLiner: "We build Digin, self-hostable collaboration software for organizations that work with CUI, and consult on platform engineering, DevSecOps, zero trust, and agentic AI for regulated and federal work.",
@@ -85,7 +86,7 @@ export const digin = {
   standing: [
     "Designed for a FISMA Moderate authorization, and built to support one with an OSCAL component definition and a control mapping.",
     "Designed for IL4 deployments, with app-embedded zero trust and mutual TLS for native apps.",
-    "Piloted with SHE BASH LLC, a DoD contracting company."
+    "In production at SHE BASH LLC, a DoD contracting company, as its only collaboration tool."
   ],
   standingNote: "These describe how Digin is designed and built. An authorization is granted to a deployment by its authorizing official; Digin is built to support one."
 };
@@ -167,7 +168,7 @@ export const experience = [
       "Ship Digin as one Go binary with the web app embedded, on PostgreSQL, running on-premises or in the customer's own cloud, with a FIPS 140-3 build on the Go Cryptographic Module (CMVP #5247)",
       "Designed Digin for a FISMA Moderate authorization: an OSCAL component definition and control mapping, every request authenticated and audited, and a hash-chained, anchored audit log",
       "Built CUI markings into the product — banners and markings on channels, issues, and pages, with notifications holding marked content back — and app-embedded zero trust for native apps: attested, hardware-bound device enrollment, 10-minute device-bound tokens, remote revoke and wipe, and mutual TLS for IL4 deployments",
-      "Piloting Digin with SHE BASH LLC, a DoD contracting company",
+      "Digin is in production at SHE BASH LLC, a DoD contracting company, as its only collaboration tool",
       "Consult on platform engineering, DevSecOps, zero trust, and agentic AI for regulated and federal teams"
     ],
     technologies: ["Go", "PostgreSQL", "FIPS 140-3", "OSCAL", "Zero Trust", "mTLS", "AI agents"]
